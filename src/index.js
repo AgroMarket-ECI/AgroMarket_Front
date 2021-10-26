@@ -3,14 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import NotFound from "./pages/not_found/NotFound"
+import { ChakraProvider } from "@chakra-ui/react"
 
 ReactDOM.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <Switch>
-        <Route component={NotFound} />
-      </Switch>
-    </BrowserRouter>
-  </React.StrictMode>,
+  <ChakraProvider>
+    <React.StrictMode>
+      <BrowserRouter>
+        <Switch>
+          <Route component={NotFound} />
+        </Switch>
+      </BrowserRouter>
+    </React.StrictMode>
+  </ChakraProvider>,
   document.getElementById('root')
 );
