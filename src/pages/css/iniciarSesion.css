@@ -1,0 +1,72 @@
+#form{
+    max-width: 300px; 
+}
+#Registro{
+    max-width: 700px; 
+}
+#Registro #registro-titulo{
+    
+    width: 100%;
+    margin: 0;
+    max-width: 650px; 
+    border-bottom: black solid;
+    position: relative;
+    height: 50px;
+    font-size: 30px;
+    text-align: left;
+    margin-top:80px;
+    margin-bottom:80px;
+    padding: 10px;
+    
+}
+#Registro #registro-titulo .imagen-registro{
+    position:absolute;
+    right: 0%;
+    top:-15%;
+    width: 130px;
+    height: auto;
+}
+
+.formulario{
+    text-align: center;
+    margin:0 auto;  
+    margin-bottom:20px; 
+}
+
+.formulario .field-text{
+    background-color: white;
+    border: solid black 1px;
+    width: 100%;
+    
+}
+.formulario .field-form{
+    width: 100%;
+    max-width: 300px;
+    margin: 15px;
+    display: inline-block;
+}
+#form .link{
+    color: blue;
+    border-bottom: solid blue;
+}
+
+#form #imagen{
+    margin:20px auto 50px;
+    width: 40%;    
+}
+
+#form .cuadro-info{
+    position: fixed;
+    right: 2%;
+  }
+
+@media only screen and (max-width: 700px) {
+    #form .cuadro-info{
+      display: None;
+    }
+  }
+  @media only screen and (max-width: 350px) {
+    #Registro #registro-titulo .imagen-registro{
+      display: None;
+    }
+  }
