@@ -1,4 +1,6 @@
 import './css/iniciarSesion.css';
+import './css/formulario.css';
+import logo from './img/eci_red.png';
 //import './css/general.css';
 //import { useHistory } from "react-router";
 import { Image, FormLabel, Input, Button, Container} from "@chakra-ui/react";
@@ -21,11 +23,11 @@ export const Login = () => {
                 </Container>
             </div>
             <div id="imagen">
-                <Image width="100%" src="https://definicion.de/wp-content/uploads/2019/06/perfildeusuario.jpg" alt="Segun Adebayo" />
+                <Image width="100%" src={logo} alt="Segun Adebayo" />
             </div>
             <div id="Usuario" className="field field-form">
                 <FormLabel>Usuario</FormLabel>
-                <Input className="field-text" placeholder="First name" />
+                <Input className="field-text" />
             </div>
             <div id="Contrasena" className="field field-form">
                 <FormLabel>Contraseña</FormLabel>

@@ -1,4 +1,7 @@
-import './css/iniciarSesion.css';
+import './css/formulario.css';
+import './css/registro.css';
+import logo from './img/eci_red.png';
+import { Link } from "react-router-dom";
 //import './css/general.css';
 //import { useHistory } from "react-router";
 import {  Text,Image, FormLabel, Input, Button, FormControl} from "@chakra-ui/react";
@@ -19,17 +22,17 @@ export const Registro = () => {
                     <Text as="em">Registro Usuario</Text>
                 </div>
                 <div className="imagen-registro">
-                    <Image width="100%" src="https://definicion.de/wp-content/uploads/2019/06/perfildeusuario.jpg" alt="Segun Adebayo" />
+                    <Image width="100%" src={logo} alt="Segun Adebayo" />
                 </div>
             </div>
             <FormControl id="first-name" isRequired>
                 <div id="Usuario" className="field field-form">
                     <FormLabel>Usuario</FormLabel>
-                    <Input className="field-text" placeholder="First name" />
+                    <Input className="field-text"/>
                 </div>
                 <div id="Correo" className="field field-form">
                     <FormLabel>Correo</FormLabel>
-                    <Input className="field-text" placeholder="First name" />
+                    <Input className="field-text"/>
                 </div>
                 <div id="Contrasena" className="field field-form">
                     <FormLabel>Contraseña</FormLabel>
@@ -37,13 +40,16 @@ export const Registro = () => {
                 </div>
                 <div id="confirmar-con" className="field field-form">
                     <FormLabel>Confirmar contraseña</FormLabel>
-                    <Input className="field-text" placeholder="First name" />
+                    <Input className="field-text"/>
                 </div>
                 <div id="boton" className="field">    
                     <Button border="solid 1px" color="black" colorScheme="red" size="md">
                         Registrarme
                     </Button> 
                 </div>
+                <div id="link" >
+                <Link className="link" to = "/Login">Ya tengo una cuenta</Link>
+            </div>
             </FormControl>
         </div>
   
