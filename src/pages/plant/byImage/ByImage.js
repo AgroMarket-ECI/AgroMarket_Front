@@ -17,10 +17,10 @@ const plants = [
     title: "Salix fragilis",
   },
   {
-    imageUrl: "https://bit.ly/2Z4KKcF",
-    imageAlt: "Rear view of modern home with pool",
+    imageUrl: "https://www.jardineriaon.com/wp-content/uploads/2014/10/Phytophtora.jpg.webp",
+    imageAlt: "Phytophtora",
     beds: 3,
-    title: "Modern home in city center in the heart of historic Los Angeles",
+    title: "Phytophtora",
   },
   {
     imageUrl: "https://bit.ly/2Z4KKcF",
