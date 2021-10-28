@@ -7,12 +7,16 @@ import { ChakraProvider } from "@chakra-ui/react"
 import { Login } from "./pages/Formularios/Login";
 import { Registro } from "./pages/Formularios/Registro";
 import UploadPlant from './pages/UploadPlant/UploadPlant';
+import { Product } from './pages/product/Product';
 
 ReactDOM.render(
   <ChakraProvider>
     <React.StrictMode>
       <BrowserRouter>
         <Switch>
+        <Route path="/product">
+						<Product />
+					</Route>
          <Route path="/Login">
             <Login />
           </Route>
