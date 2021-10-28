@@ -6,6 +6,7 @@ import NotFound from "./pages/not_found/NotFound"
 import { ChakraProvider } from "@chakra-ui/react"
 import { Login } from "./pages/Formularios/Login";
 import { Registro } from "./pages/Formularios/Registro";
+import UploadPlant from './pages/UploadPlant/UploadPlant';
 
 ReactDOM.render(
   <ChakraProvider>
@@ -18,6 +19,7 @@ ReactDOM.render(
           <Route path="/registrarme">
             <Registro />
           </Route>
+          <Route  path="/upload-plant" component={UploadPlant}/>
           <Route component={NotFound} />
         </Switch>
       </BrowserRouter>
