@@ -14,7 +14,7 @@ export const ByImage = () => {
     {
       imageUrl: "https://www.jardineriaon.com/wp-content/uploads/2014/10/Agalla_de_Salix_fragilis.jpg",
       imageAlt: "Agallas rojo",
-      title: "Agallas rojo"
+      title: "Agallas rojas"
     },
     {
       imageUrl: "https://www.opia.cl/601/articles-81762_recurso_01.jpg",
@@ -42,10 +42,15 @@ export const ByImage = () => {
           <p className="plantName">Salix fragilis</p>
           <br />
           <Carousel breakPoints={breakPoints}>
-            <PlantItem>One</PlantItem>
-            <PlantItem>Two</PlantItem>
-            <PlantItem>Three</PlantItem>
-            <PlantItem>Four</PlantItem>
+            {plants.map((plant) => {
+                return (
+                  <PlantItem
+                    imageUrl={plant.imageUrl}
+                    imageAlt={plant.imageAlt}
+                    title={plant.title}
+                  />
+                );
+              })}
           </Carousel>
         </div>
       </div>

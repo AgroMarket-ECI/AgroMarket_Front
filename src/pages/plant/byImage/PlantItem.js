@@ -4,21 +4,14 @@ import {
     Image,
 } from '@chakra-ui/react';
 
-const clickChange = () => {
-    window.location.href = '/product';
-};
-
-export const PlantItem = () => {
-    const property = {
-        imageUrl: "https://bit.ly/2Z4KKcF",
-        imageAlt: "Rear view of modern home with pool",
-        beds: 3,
-        title: "Modern home in city center in the heart of historic Los Angeles",
-    }
+export const PlantItem = ({ imageUrl, imageAlt, title }) => {
+    const clickChange = () => {
+        window.location.href = '/product';
+    };    
 
     return (
         <Box as="button" maxW="xs" borderWidth="1px" borderRadius="lg" overflow="hidden" borderColor="black" onClick={clickChange}>
-            <Image src={property.imageUrl} alt={property.imageAlt} />
+            <Image src={imageUrl} alt={imageAlt} />
             <Box p="6">
                 <Box
                     mt="1"
@@ -27,7 +20,7 @@ export const PlantItem = () => {
                     lineHeight="tight"
                     isTruncated
                 >
-                    {property.title}
+                    {title}
                 </Box>
             </Box>
         </Box>
