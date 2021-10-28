@@ -3,9 +3,16 @@
   margin-top: 5%;
   font-size: 210%;
 }
+
+.plantName{
+   text-align: center;
+  margin-top: 5%;
+  font-size: 220%;
+  color:rgb(89, 139, 139);
+}
+
 .carosusel {
     font-family: sans-serif;
-    margin-top: 6%;
     align-items: center;
     justify-content: center;
     height: 50vh;

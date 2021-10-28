@@ -3,59 +3,51 @@ import Carousel from "react-elastic-carousel";
 import { PlantItem } from "./PlantItem";
 import "./css/ByImage.css";
 
-const breakPoints = [
-  { width: 1, itemsToShow: 1 },
-  { width: 550, itemsToShow: 2 },
-  { width: 768, itemsToShow: 3 },
-];
-
-const plants = [
-  {
-    imageUrl: "https://www.jardineriaon.com/wp-content/uploads/2014/10/Agalla_de_Salix_fragilis.jpg",
-    imageAlt: "Salix fragilis",
-    beds: 3,
-    title: "Salix fragilis",
-  },
-  {
-    imageUrl: "https://www.jardineriaon.com/wp-content/uploads/2014/10/Phytophtora.jpg.webp",
-    imageAlt: "Phytophtora",
-    beds: 3,
-    title: "Phytophtora",
-  },
-  {
-    imageUrl: "https://bit.ly/2Z4KKcF",
-    imageAlt: "Rear view of modern home with pool",
-    beds: 3,
-    title: "Modern home in city center in the heart of historic Los Angeles",
-  },
-  {
-    imageUrl: "https://bit.ly/2Z4KKcF",
-    imageAlt: "Rear view of modern home with pool",
-    beds: 3,
-    title: "Modern home in city center in the heart of historic Los Angeles",
-
-  },
-  {
-    imageUrl: "https://bit.ly/2Z4KKcF",
-    imageAlt: "Rear view of modern home with pool",
-    beds: 3,
-    title: "Modern home in city center in the heart of historic Los Angeles",
-  }
-];
-
 export const ByImage = () => {
+  const breakPoints = [
+    { width: 1, itemsToShow: 1 },
+    { width: 550, itemsToShow: 2 },
+    { width: 768, itemsToShow: 3 },
+  ];
+
+  const plants = [
+    {
+      imageUrl: "https://www.jardineriaon.com/wp-content/uploads/2014/10/Agalla_de_Salix_fragilis.jpg",
+      imageAlt: "Agallas rojo",
+      title: "Agallas rojo"
+    },
+    {
+      imageUrl: "https://www.opia.cl/601/articles-81762_recurso_01.jpg",
+      imageAlt: "Parásito la polilla del Álamo",
+      title: "Parásito la polilla del Álamo"
+    },
+    {
+      imageUrl: "https://www.arvensis.com/blog/wp-content/uploads/2020/04/Leaf-blight.jpg",
+      imageAlt: "Tizón de la hoja",
+      title: "Tizón de la hoja",
+    },
+    {
+      imageUrl: "https://www.arvensis.com/blog/wp-content/uploads/2020/04/Late-blight-Tiz%C3%B3n-tard%C3%ADo-Mildiu-de-la-patata.jpg",
+      imageAlt: "Tizón tardío o mildiu de la papa",
+      title: "Tizón tardío o mildiu de la papa",
+    }
+  ];
   return (
     <>
-      <div className="titleImage">
-        <p>Selecciona la imagen de como luce tu planta</p>
+      <div>
+        <p className="titleImage">Selecciona la imagen de como luce tu planta</p>
       </div>
-      <div className="carosusel">
-        <Carousel breakPoints={breakPoints}>
-          <PlantItem>One</PlantItem>
-          <PlantItem>Two</PlantItem>
-          <PlantItem>Three</PlantItem>
-          <PlantItem>Four</PlantItem>
-        </Carousel>
+      <div>
+        <div className="carosusel">
+          <p className="plantName">Salix fragilis</p>
+          <br />
+          <Carousel breakPoints={breakPoints}>
+            <PlantItem>One</PlantItem>
+            <PlantItem>Two</PlantItem>
+            <PlantItem>Three</PlantItem>
+            <PlantItem>Four</PlantItem>
+          </Carousel>
+        </div>
       </div>
     </>
   );

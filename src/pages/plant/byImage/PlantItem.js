@@ -29,18 +29,6 @@ export const PlantItem = () => {
                 >
                     {property.title}
                 </Box>
-                <Box display="flex" alignItems="baseline">
-                    <Box
-                        color="gray.500"
-                        fontWeight="semibold"
-                        letterSpacing="wide"
-                        fontSize="xs"
-                        ml="2"
-                    >
-                        {property.beds} beds
-                    </Box>
-                </Box>
-
             </Box>
         </Box>
     )
