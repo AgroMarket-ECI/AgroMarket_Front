@@ -4,8 +4,8 @@ import './index.css';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import NotFound from "./pages/not_found/NotFound"
 import { ChakraProvider } from "@chakra-ui/react"
-import { Login } from "./pages/Login";
-import { Registro } from "./pages/Registro";
+import { Login } from "./pages/Formularios/Login";
+import { Registro } from "./pages/Formularios/Registro";
 
 ReactDOM.render(
   <ChakraProvider>

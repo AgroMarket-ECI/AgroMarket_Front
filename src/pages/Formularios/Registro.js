@@ -1,8 +1,7 @@
 import './css/formulario.css';
 import './css/registro.css';
-import logo from './img/eci_red.png';
+import logo from './img/AgroMarket.png';
 import { Link } from "react-router-dom";
-//import './css/general.css';
 //import { useHistory } from "react-router";
 import {  Text,Image, FormLabel, Input, Button, FormControl} from "@chakra-ui/react";
 import { Password } from "./Password";
@@ -40,7 +39,7 @@ export const Registro = () => {
                 </div>
                 <div id="confirmar-con" className="field field-form">
                     <FormLabel>Confirmar contraseña</FormLabel>
-                    <Input className="field-text"/>
+                    <Password/>
                 </div>
                 <div id="boton" className="field">    
                     <Button border="solid 1px" color="black" colorScheme="red" size="md">

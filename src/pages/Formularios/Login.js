@@ -1,7 +1,6 @@
 import './css/iniciarSesion.css';
 import './css/formulario.css';
-import logo from './img/eci_red.png';
-//import './css/general.css';
+import logo from './img/AgroMarket.png';
 //import { useHistory } from "react-router";
 import { Image, FormLabel, Input, Button, Container} from "@chakra-ui/react";
 import { Password } from "./Password";

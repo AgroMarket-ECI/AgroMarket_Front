@@ -3,8 +3,9 @@
 }
 
 #form #imagen{
-    margin:20px auto 50px;
-    width: 40%;    
+    margin:50px auto 15px;
+    width: 60%;
+    height:auto;    
 }
 
 #form .cuadro-info{
