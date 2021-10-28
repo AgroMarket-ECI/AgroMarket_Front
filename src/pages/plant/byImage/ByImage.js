@@ -9,6 +9,40 @@ const breakPoints = [
   { width: 768, itemsToShow: 3 },
 ];
 
+const plants = [
+  {
+    imageUrl: "https://www.jardineriaon.com/wp-content/uploads/2014/10/Agalla_de_Salix_fragilis.jpg",
+    imageAlt: "Salix fragilis",
+    beds: 3,
+    title: "Salix fragilis",
+  },
+  {
+    imageUrl: "https://bit.ly/2Z4KKcF",
+    imageAlt: "Rear view of modern home with pool",
+    beds: 3,
+    title: "Modern home in city center in the heart of historic Los Angeles",
+  },
+  {
+    imageUrl: "https://bit.ly/2Z4KKcF",
+    imageAlt: "Rear view of modern home with pool",
+    beds: 3,
+    title: "Modern home in city center in the heart of historic Los Angeles",
+  },
+  {
+    imageUrl: "https://bit.ly/2Z4KKcF",
+    imageAlt: "Rear view of modern home with pool",
+    beds: 3,
+    title: "Modern home in city center in the heart of historic Los Angeles",
+
+  },
+  {
+    imageUrl: "https://bit.ly/2Z4KKcF",
+    imageAlt: "Rear view of modern home with pool",
+    beds: 3,
+    title: "Modern home in city center in the heart of historic Los Angeles",
+  }
+];
+
 export const ByImage = () => {
   return (
     <>
@@ -21,10 +55,6 @@ export const ByImage = () => {
           <PlantItem>Two</PlantItem>
           <PlantItem>Three</PlantItem>
           <PlantItem>Four</PlantItem>
-          <PlantItem>Five</PlantItem>
-          <PlantItem>Six</PlantItem>
-          <PlantItem>Seven</PlantItem>
-          <PlantItem>Eight</PlantItem>
         </Carousel>
       </div>
     </>

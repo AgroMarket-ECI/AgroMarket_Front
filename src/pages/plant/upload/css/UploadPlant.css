@@ -5,7 +5,6 @@
 
 .page{
     height: 100vh;
-    background-color: darkblue;
     display: flex;
     align-items: center;
     justify-content: center;
