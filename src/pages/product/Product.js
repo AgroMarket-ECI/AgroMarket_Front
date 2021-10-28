@@ -1,6 +1,9 @@
+import './css/Product.css';
+import { useState } from 'react';
 import {
 	Container,
 	Stack,
+	HStack,
 	Box,
 	Heading,
 	Text,
@@ -17,11 +20,35 @@ import {
 import { AddIcon } from '@chakra-ui/icons';
 
 export const Product = () => {
-	const plantName = 'Sauce laurifolio, Salenca';
-	const plantCode = 'Code: 2001ICX';
+	const [ itemsCounter, setItemsCounter ] = useState(1);
+	const plantName = 'Daconil®';
+	const plantCode = 'Fungicida listo para usar';
 	const plantPrice = '$16.500';
+
+	const CircleIcon = (props) => (
+		<Icon viewBox="0 0 200 200" {...props}>
+			<path fill="currentColor" d="M 100, 100 m -75, 0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0" />
+		</Icon>
+	);
+
+	const handleSubmit = (event) => {
+		event.preventDefault();
+		setItemsCounter(itemsCounter);
+	};
+
+	const handleItemCounterChange = (event) => {
+		const number = event.target.defaultValue;
+		console.log('value is: ' + number);
+		setItemsCounter(number);
+	};
+
 	return (
 		<Container maxW={'8xl'}>
+			<HStack justify={'right'} py={6}>
+				<Button leftIcon={<CircleIcon boxSize={7} color="red.500" />} colorScheme="teal" variant="solid">
+					{itemsCounter}
+				</Button>
+			</HStack>
 			<Stack
 				align={'center'}
 				spacing={{ base: 8, md: 20 }}
@@ -30,13 +57,13 @@ export const Product = () => {
 			>
 				<Stack flex={1} spacing={{ base: 5, md: 10 }}>
 					<Blob
-						w={'90%'}
-						h={'80%'}
+						w={'80%'}
+						h={'55%'}
 						position={'absolute'}
-						top={'15%'}
-						left={-350}
+						top={{ base: '6%', lg: '26%' }}
+						left={{ base: 2, md: -300, lg: -380 }}
 						zIndex={-1}
-						color={useColorModeValue('red.50', 'red.400')}
+						color={useColorModeValue('green.300', 'green.200')}
 					/>
 					<Box
 						position={'relative'}
@@ -52,11 +79,13 @@ export const Product = () => {
 							align={'center'}
 							w={'100%'}
 							h={'100%'}
-							src={'https://www.jardineriaon.com/wp-content/uploads/2014/10/Agalla_de_Salix_fragilis.jpg'}
+							src={
+								'https://www.gardentech.com/-/media/Images/GardenTech-NA/US/products/Daconil-family-in-use.jpg'
+							}
 						/>
 					</Box>
 				</Stack>
-				<Stack flex={1} spacing={{ base: 5, md: 10 }}>
+				<Stack flex={1} spacing={{ base: 7, md: 10 }}>
 					<Heading lineHeight={1.1} fontWeight={600} fontSize={{ base: '3xl', sm: '4xl', lg: '6xl' }}>
 						<Text
 							as={'span'}
@@ -64,7 +93,7 @@ export const Product = () => {
 							_after={{
 								content: "''",
 								width: 'full',
-								height: '30%',
+								height: '25%',
 								position: 'absolute',
 								bottom: 1,
 								left: 0,
@@ -83,15 +112,16 @@ export const Product = () => {
 							{plantPrice}
 						</Text>
 					</Heading>
-					<Text color={'gray.500'}>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vehicula feugiat molestie.
-						Praesent et pretium nunc. Aliquam ac augue eu ante consectetur bibendum non eu leo. Fusce a mi
-						quam. In iaculis pretium varius. Morbi tristique felis et libero viverra, et placerat justo
-						dictum. Cras tempor eget metus eget volutpat. Nam imperdiet neque ut accumsan vestibulum.
+					<Text fontSize={'130%'}>
+						Con el fungicida Daconil® listo para usar, usted puede prevenir las enfermedades causadas por
+						hongos antes de que broten, o combatirlas para detener y controlar las enfermedades activas. La
+						botella con rociador lista para llevar simplifica el tratamiento a sus plantas de flores,
+						vegetales, frutales, arbustos y árboles, con una protección resistente a la lluvia en la que
+						puede confiar.
 					</Text>
 					<Stack spacing={{ base: 4, sm: 6 }} direction={'row'}>
 						<NumberInput size="lg" maxW={32} defaultValue={1} min={1} max={10}>
-							<NumberInputField />
+							<NumberInputField backgroundColor={'white'} />
 							<NumberInputStepper>
 								<NumberIncrementStepper />
 								<NumberDecrementStepper />
@@ -104,13 +134,33 @@ export const Product = () => {
 							px={6}
 							color={'white'}
 							colorScheme="red"
-							leftIcon={<AddIcon h={4} w={4} color={'white.300'} />}
+							leftIcon={<AddIcon h={4} w={4} color={'white.300'} onSubmit={handleSubmit} />}
 						>
 							Add to Cart
 						</Button>
 					</Stack>
 				</Stack>
 			</Stack>
+			<HStack>
+				<Heading lineHeight={1.1} fontWeight={500} fontSize={{ base: '3xl', sm: '4xl', lg: '5xl' }}>
+					<Text
+						as={'span'}
+						position={'relative'}
+						_after={{
+							content: "''",
+							width: 'full',
+							height: '15%',
+							position: 'absolute',
+							bottom: 1,
+							left: 0,
+							bg: 'red.400',
+							zIndex: -1
+						}}
+					>
+						También te puede interesar
+					</Text>
+				</Heading>
+			</HStack>
 		</Container>
 	);
 };
