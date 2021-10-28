@@ -8,6 +8,7 @@ import { Login } from "./pages/form/Login";
 import { SignUp } from "./pages/form/SignUp";
 import UploadPlant from './pages/plant/upload/UploadPlant';
 import { ByImage } from './pages/plant/byImage/ByImage';
+import { Home } from "./pages/Home/Home";
 import { Product } from './pages/product/Product';
 
 ReactDOM.render(
@@ -20,6 +21,7 @@ ReactDOM.render(
         <Route path="/signUp" component={SignUp}/>
         <Route  path="/plant/upload" component={UploadPlant}/>
         <Route path="/plant/image" component={ByImage}/>
+        <Route path="/home" component={Home}/>
         <Route component={NotFound} />
         </Switch>
       </BrowserRouter>
