@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Box, Center, Heading, Image } from "@chakra-ui/react"
-import './UploadPlant.css'
+import './css/UploadPlant.css'
 
 const UploadPlant = () => {
 

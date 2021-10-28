@@ -1,5 +1,5 @@
-import './css/iniciarSesion.css';
-import './css/formulario.css';
+import './css/Login.css';
+import './css/Form.css';
 import logo from './img/AgroMarket.png';
 //import { useHistory } from "react-router";
 import { Image, FormLabel, Input, Button, Container} from "@chakra-ui/react";

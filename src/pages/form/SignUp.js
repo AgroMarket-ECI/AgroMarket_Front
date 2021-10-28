@@ -1,11 +1,11 @@
-import './css/formulario.css';
-import './css/registro.css';
-import logo from './img/AgroMarket.png';
+import './css/Form.css';
+import './css/SignUp.css';
+import logo from './img//AgroMarket.png';
 import { Link } from "react-router-dom";
 //import { useHistory } from "react-router";
 import {  Text,Image, FormLabel, Input, Button, FormControl} from "@chakra-ui/react";
 import { Password } from "./Password";
-export const Registro = () => {
+export const SignUp= () => {
 
    // const history = useHistory();
 
@@ -56,4 +56,4 @@ export const Registro = () => {
 
     );
 };
-export default Registro
+export default SignUp

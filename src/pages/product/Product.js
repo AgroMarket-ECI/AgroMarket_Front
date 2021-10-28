@@ -7,7 +7,6 @@ import {
 	Button,
 	Image,
 	Icon,
-	IconProps,
 	useColorModeValue,
 	NumberIncrementStepper,
 	NumberDecrementStepper,

@@ -2,11 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import NotFound from "./pages/not_found/NotFound"
+import NotFound from "./pages/notFound/NotFound"
 import { ChakraProvider } from "@chakra-ui/react"
-import { Login } from "./pages/Formularios/Login";
-import { Registro } from "./pages/Formularios/Registro";
-import UploadPlant from './pages/UploadPlant/UploadPlant';
+import { Login } from "./pages/form/Login";
+import { SignUp } from "./pages/form/SignUp";
+import UploadPlant from './pages/plant/upload/UploadPlant';
+import { ByImage } from './pages/plant/byImage/ByImage';
 import { Product } from './pages/product/Product';
 
 ReactDOM.render(
@@ -14,16 +15,11 @@ ReactDOM.render(
     <React.StrictMode>
       <BrowserRouter>
         <Switch>
-        <Route path="/product">
-						<Product />
-					</Route>
-         <Route path="/Login">
-            <Login />
-          </Route>
-          <Route path="/registrarme">
-            <Registro />
-          </Route>
-          <Route  path="/upload-plant" component={UploadPlant}/>
+        <Route path="/product" component={Product}/>
+         <Route path="/login" component={Login}/>
+          <Route path="/signUp" component={SignUp}/>
+          <Route  path="/plant/upload" component={UploadPlant}/>
+          <Route path="/plant/image" component={ByImage}/>
           <Route component={NotFound} />
         </Switch>
       </BrowserRouter>
