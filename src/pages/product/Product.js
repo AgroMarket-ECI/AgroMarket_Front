@@ -60,7 +60,7 @@ export const Product = () => {
 						w={'80%'}
 						h={'55%'}
 						position={'absolute'}
-						top={{ base: '6%', lg: '26%' }}
+						top={{ base: '6%', lg: '28%' }}
 						left={{ base: 2, md: -300, lg: -380 }}
 						zIndex={-1}
 						color={useColorModeValue('green.300', 'green.200')}
@@ -77,7 +77,7 @@ export const Product = () => {
 							alt={'Product Image'}
 							fit={'cover'}
 							align={'center'}
-							w={'100%'}
+							w={'full'}
 							h={'100%'}
 							src={
 								'https://www.gardentech.com/-/media/Images/GardenTech-NA/US/products/Daconil-family-in-use.jpg'
@@ -151,7 +151,7 @@ export const Product = () => {
 							width: 'full',
 							height: '15%',
 							position: 'absolute',
-							bottom: 1,
+							bottom: 2,
 							left: 0,
 							bg: 'red.400',
 							zIndex: -1
