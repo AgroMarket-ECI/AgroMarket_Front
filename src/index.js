@@ -16,11 +16,11 @@ ReactDOM.render(
       <BrowserRouter>
         <Switch>
         <Route path="/product" component={Product}/>
-         <Route path="/login" component={Login}/>
-          <Route path="/signUp" component={SignUp}/>
-          <Route  path="/plant/upload" component={UploadPlant}/>
-          <Route path="/plant/image" component={ByImage}/>
-          <Route component={NotFound} />
+        <Route path="/login" component={Login}/>
+        <Route path="/signUp" component={SignUp}/>
+        <Route  path="/plant/upload" component={UploadPlant}/>
+        <Route path="/plant/image" component={ByImage}/>
+        <Route component={NotFound} />
         </Switch>
       </BrowserRouter>
     </React.StrictMode>

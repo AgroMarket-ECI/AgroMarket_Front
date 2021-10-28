@@ -1,8 +1,13 @@
-.App {
+.titleImage{
+  text-align: center;
+  margin-top: 5%;
+  font-size: 210%;
+}
+.carosusel {
     font-family: sans-serif;
-    display: flex;
+    margin-top: 6%;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 50vh;
   }
   

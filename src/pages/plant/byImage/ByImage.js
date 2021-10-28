@@ -7,14 +7,15 @@ const breakPoints = [
   { width: 1, itemsToShow: 1 },
   { width: 550, itemsToShow: 2 },
   { width: 768, itemsToShow: 3 },
-  { width: 1200, itemsToShow: 4 },
 ];
 
 export const ByImage = () => {
   return (
     <>
-      <h1 style={{ textAlign: "center" }}>Example to setup your carousel in react</h1>
-      <div className="App">
+      <div className="titleImage">
+        <p>Selecciona la imagen de como luce tu planta</p>
+      </div>
+      <div className="carosusel">
         <Carousel breakPoints={breakPoints}>
           <PlantItem>One</PlantItem>
           <PlantItem>Two</PlantItem>
