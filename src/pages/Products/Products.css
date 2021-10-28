@@ -1,0 +1,36 @@
+.frow {
+  clear: both;
+  padding: 10px;
+}
+
+.frow .col {
+  display: block;
+  float: left;
+  margin: 1% 0 1% 1.6%;
+  padding: 2%;
+}
+
+.frow .col:first-child {
+  margin-left: 0;
+}
+
+.frow .col1 {
+  width: 27%;
+}
+.frow .col2 {
+    width: 70%;
+  }
+
+
+@media only screen and (max-width: 480px) {
+  .col {
+    margin: 1% 0 1% 0%;
+    margin-left: 0 !important;
+  }
+  .frow .col1 {
+    width: 100%;
+  }
+  .frow .col2 {
+    width: 100%;
+  }
+}

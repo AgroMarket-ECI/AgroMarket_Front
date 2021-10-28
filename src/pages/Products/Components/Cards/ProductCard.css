@@ -1,0 +1,21 @@
+#info {
+  text-align: center;
+  word-break: break-all;
+}
+
+#des {
+  font-size: 15px;
+  font-weight: 500;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+#price {
+  font-size: 10px;
+}
+
+.item:hover {
+  transform: scale(1.05);
+  background-color: #fabfb7;
+  box-shadow: 0 9px 47px 11px rgba(51, 51, 51, 0.18);
+}
