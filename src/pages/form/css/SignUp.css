@@ -1,32 +1,17 @@
-#Registro #registro-titulo .imagen-registro{
-    position:absolute;
-    right: 0%;
-    top:-90%;
-    width: 0px;
-    height: auto;
+#Registro{
+    max-width: 500px; 
 }
 
 #Registro #registro-titulo{
-    width: 100%;
+    
     margin: 0;
     max-width: 650px; 
     border-bottom: black solid;
     position: relative;
-    height: 50px;
+    height: 55px;
     font-size: 30px;
     text-align: left;
-    margin-top:80px;
-    margin-bottom:80px;
+    margin-top:40px;
+    margin-bottom:30px;
     padding: 10px;  
 }
-
-#Registro{
-    max-width: 700px; 
-}
-
-
-@media only screen and (max-width: 350px) {
-    #Registro #registro-titulo .imagen-registro{
-      display: None;
-    }
-  }

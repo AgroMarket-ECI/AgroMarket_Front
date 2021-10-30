@@ -1,17 +1,17 @@
-.formulario .field-form{
-    width: 100%;
-    max-width: 300px;
-    margin: 15px;
-    display: inline-block;
+.formulario .field{
+    margin-bottom: 25px;
 }
 .formulario .link{
     color: #000868;
     border-bottom: solid #000868;
+    font-size:20px
+    
 }
 .formulario{
     text-align: center;
     margin:0 auto;  
-    margin-bottom:20px; 
+    margin-bottom:80px; 
+    width: 90%;
 }
 
 .formulario .field-text{
@@ -19,4 +19,10 @@
     border: solid black 1px;
     width: 100%;
     
+}
+
+.formulario .field-button{
+    width: 100%;
+    color:"white";
+   
 }

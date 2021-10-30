@@ -1,13 +1,13 @@
 import React from 'react';
 import { InputGroup, Input, InputRightElement,Button} from "@chakra-ui/react";
 
-export const Password = () =>{
+export const Password = (pholder) =>{
     const [show, setShow] = React.useState(false)
     const handleClick = () => setShow(!show)
-  
+    console.log(pholder);
     return (
       <InputGroup size="md">
-        <Input className="field-text"
+        <Input placeholder={pholder.pholder} className="field-text"
           pr="4.5rem"
           type={show ? "text" : "password"}
      
