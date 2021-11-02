@@ -1,3 +1,21 @@
 #imagen{
-    margin:50px auto 15px;
+    margin:45px auto 15px;
+}
+
+#input[type="file"]{
+    display: none;
+}
+
+.home{
+    position: absolute;
+    left: 10%;
+    right: 10%;
+}
+
+.inputplanta{
+    
+}
+
+.plantaimg{
+    position: absolute;
 }

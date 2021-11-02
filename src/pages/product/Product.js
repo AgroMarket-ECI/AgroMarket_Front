@@ -112,13 +112,6 @@ export const Product = () => {
 							{plantPrice}
 						</Text>
 					</Heading>
-					<Text fontSize={'130%'}>
-						Con el fungicida Daconil® listo para usar, usted puede prevenir las enfermedades causadas por
-						hongos antes de que broten, o combatirlas para detener y controlar las enfermedades activas. La
-						botella con rociador lista para llevar simplifica el tratamiento a sus plantas de flores,
-						vegetales, frutales, arbustos y árboles, con una protección resistente a la lluvia en la que
-						puede confiar.
-					</Text>
 					<Stack spacing={{ base: 4, sm: 6 }} direction={'row'}>
 						<NumberInput size="lg" maxW={32} defaultValue={1} min={1} max={10}>
 							<NumberInputField backgroundColor={'white'} />
@@ -139,6 +132,14 @@ export const Product = () => {
 							Add to Cart
 						</Button>
 					</Stack>
+					<Text fontSize={'130%'}>
+						Con el fungicida Daconil® listo para usar, usted puede prevenir las enfermedades causadas por
+						hongos antes de que broten, o combatirlas para detener y controlar las enfermedades activas. La
+						botella con rociador lista para llevar simplifica el tratamiento a sus plantas de flores,
+						vegetales, frutales, arbustos y árboles, con una protección resistente a la lluvia en la que
+						puede confiar.
+					</Text>
+					
 				</Stack>
 			</Stack>
 			<HStack>

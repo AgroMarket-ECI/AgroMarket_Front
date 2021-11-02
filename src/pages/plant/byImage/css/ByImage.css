@@ -1,20 +1,26 @@
-.titleImage{
+*{margin: 0;
+padding: 0;}
+#plantsimage .titleImage{
   text-align: center;
   margin-top: 5%;
   font-size: 210%;
 }
 
-.plantName{
+#plantsimage .plantName{
   text-align: center;
   margin-top: 5%;
   font-size: 220%;
   color:rgb(89, 139, 139);
 }
 
-.carosusel {
-    font-family: sans-serif;
-    align-items: center;
-    justify-content: center;
-    height: 50vh;
-  }
+#plantsimage .img{
+  background-color: darkgreen;
+  width: 100%;
+  height: 50% !important;
+}
+
+#plantsimage .textotarjeta{
+  height: 50% !important;
+  background-color: coral;
+}
   

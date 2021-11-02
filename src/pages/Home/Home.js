@@ -3,63 +3,74 @@ import { Search2Icon, Icon } from '@chakra-ui/icons';
 import { BsFillCameraFill } from "react-icons/bs";
 import './css/Home.css';
 import logo from '../form/img/AgroMarket.png';
+import planta from './img/homeplanta2.jpg';
+import { useState, useRef} from "react";
 
 export const Home = () =>{
+    const fileInputRef = useRef(null);
+    const [plantImg, setPlantImg] = useState('https://uxwing.com/wp-content/themes/uxwing/download/32-video-photography-multimedia/upload-image.png');
+
+    const imgchange = (event) =>{
+        event.preventDefault();
+        fileInputRef.current.click();
+    }
+
+    var imageHandler = (e) => {
+        const reader = new FileReader();
+        reader.onload = () => {
+            if (reader.readyState === 2) {
+                setPlantImg(reader.result)
+            }
+        }
+        if(e.target.files[0]){
+            reader.readAsDataURL(e.target.files[0])
+        }
+            
+    };
+
     return (
         <div className="home">
-            <Center>
-                <Box>
+            <Box>
+                <Image id="imagen" boxSize="200px" src={logo}/>  
+                <br />
+                <Text fontSize="xl" width="100%" textAlign={[ 'center' ]} color="Gray">
+                    Te brindamos las mejores soluciones para combatir la enfermedad de tu planta de una forma rapida y eficiente.
+                </Text>    
+                <br />
+                <Text fontSize="xl" width="100%" textAlign={[ 'center' ]} color="Gray">
+                    Selecciona la forma en que deseas realizar la búsqueda
+                </Text>
+                
+                <br />   
+                <SimpleGrid minChildWidth="230px" spacing="40px">
                     <Center>
-                    <Image id="imagen" boxSize="200px" src={logo}/>  
+                    <Box>
+                        <InputGroup width="100%" maxW="300px" minW="300px" className="inputplanta">
+                            <InputLeftElement pointerEvents="none" children={<Search2Icon color="gray.300" />}/>
+                            <Input  background="white" type="tel" placeholder="Buscar por Nombre de la planta" />
+                        </InputGroup>
+                    </Box>
                     </Center>
-                    <br />
-                    <Center>
-                        <Text fontSize="2xl" width="80%" textAlign={[ 'center' ]} >
-                            Tenemos la mejor solución para combatir la enfermedad de tu planta. Con ayuda de la mejor 
-                            tecnologia te recomendaremos productos que te permitan tratar y curar cualquier enfermedad. Y no te preocupes,
-                            también podrás adquirir estos productos a través de nuestra tienda virtual.
-                        </Text>
-                    </Center>
+                    <Box>
+                        <Center>
+                            <Image src={plantImg} alt="" maxW="90%" maxH="100px"/>
+                        </Center>
+                        <input type="file" id="input" ref={fileInputRef} accept="image/*" onChange={imageHandler} />
                         <br />
-                    <Center>
-                        <Text fontSize="2xl" width="80%" textAlign={[ 'center' ]} >
-                            Selecciona la forma en que deseas realizar la búsqueda
-                        </Text>
-                    </Center>
-                    <br />
-                    <br />
-                    <SimpleGrid minChildWidth="180px" spacing="40px">
-                        <Box>
-                            <Center>
-                            <Search2Icon w={10} h={10}/>
-                            </Center>
-                            <br />
-                            <Center>
-                            <InputGroup width="260px">
-                                <InputLeftElement
-                                pointerEvents="none"
-                                children={<Search2Icon color="gray.300" />}
-                                />
-                                <Input variant="filled" type="tel" placeholder="Nombre de la planta" />
-                            </InputGroup>
-                            </Center>
-                            <br />
-                            <Center>
-                            <Button border="solid 1px" color="black" colorScheme="red">Buscar por nombre de la planta</Button>
-                            </Center>
-                        </Box>
-                        <Box>
-                            <Center>
-                            <Icon as={BsFillCameraFill} w={10} h={10}/>
-                            </Center>
-                            <br />
-                            <Center>
-                            <Button border="solid 1px" color="black" colorScheme="red">Buscar por foto</Button>
-                            </Center>
-                        </Box>
-                    </SimpleGrid>
-                </Box>
-            </Center>
+                        <Center>
+                            <Button border="solid 1px" maxW="300px" colorScheme="red" onClick={imgchange} width="100%">
+                                <i className="material-icons">add_photo_alternate</i>
+                                Sube la foto de tu planta
+                            </Button>
+                        </Center>
+                    </Box>
+                </SimpleGrid>
+                <br />
+                <br />
+                <Center>
+                    <Button border="solid 1px" maxW="300px" colorScheme="red" width="100%">Buscar</Button>
+                </Center>
+            </Box>
         </div>
     )
 
