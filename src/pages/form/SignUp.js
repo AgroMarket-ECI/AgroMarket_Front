@@ -1,14 +1,16 @@
 import './css/Form.css';
 import './css/SignUp.css';
-import logo from './img//AgroMarket.png';
 import { Link } from "react-router-dom";
+import { useContext } from "react";
 import { useHistory } from "react-router";
-import {  Text,Image, FormLabel, Input, Button, FormControl} from "@chakra-ui/react";
+import {  Text, FormLabel, Input, Button, FormControl} from "@chakra-ui/react";
 import { Password } from "./Password";
+import { ServiceAPI } from "../../services/context/UserContext";
+
 export const SignUp= () => {
 
     const history = useHistory();
-
+    const {getToken,setToken,serviceRest} = useContext(ServiceAPI)
 
     const sendDates = (event) => {
         event.preventDefault();

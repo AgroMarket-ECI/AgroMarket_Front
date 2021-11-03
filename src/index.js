@@ -10,9 +10,10 @@ import UploadPlant from './pages/plant/upload/UploadPlant';
 import { ByImage } from './pages/plant/byImage/ByImage';
 import { Home } from "./pages/Home/Home";
 import { Product } from './pages/product/Product';
-
+import {ServiceApi} from './services/ServiceApi';
 ReactDOM.render(
   <ChakraProvider>
+    <ServiceApi>
     <React.StrictMode>
       <BrowserRouter>
         <Switch>
@@ -26,6 +27,7 @@ ReactDOM.render(
         </Switch>
       </BrowserRouter>
     </React.StrictMode>
+    </ServiceApi>
   </ChakraProvider>,
   document.getElementById('root')
 );
