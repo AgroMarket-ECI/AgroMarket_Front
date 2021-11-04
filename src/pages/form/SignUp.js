@@ -5,8 +5,10 @@ import { useContext } from "react";
 import { useHistory } from "react-router";
 import {  Image, Text, FormLabel, Input, Button, FormControl} from "@chakra-ui/react";
 import { Password } from "./Password";
-import { SimpleMenu } from "../components/SimpleMenu";
 import  UserContext  from "../../services/context/UserContext";
+import { SimpleMenu } from "../components/SimpleMenu";
+import { CartComponent } from "../components/CartComponent";
+import logo2 from '../../img/AgroMarket.png';
 
 export const SignUp= () => {
 
@@ -35,7 +37,14 @@ export const SignUp= () => {
     return(
     
         <div id="Registro" className="formulario">
-            <SimpleMenu></SimpleMenu>
+            <div id="header" className="header">
+          <SimpleMenu/>
+          <div className="imagen-header">
+          <Image width="100%" src={logo2} alt="Segun Adebayo" />
+          </div>
+          <CartComponent/>
+        </div>
+            
             <div id="registro-titulo">
                 <div id="registro-titulo-texto">
                     <Text>Registro Usuario</Text>

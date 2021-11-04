@@ -27,6 +27,7 @@ import {
 
 import { SimpleMenu } from "../components/SimpleMenu";
 import { CartComponent } from "../components/CartComponent";
+import logo2 from '../../img/AgroMarket.png';
 import { AddIcon } from '@chakra-ui/icons';
 
 export const Product = () => {
@@ -87,8 +88,13 @@ export const Product = () => {
 
 	return (
 		<Container maxW={'8xl'}>
-			<SimpleMenu></SimpleMenu>
-            <CartComponent></CartComponent>
+			<div id="header" className="header">
+          <SimpleMenu/>
+          <div className="imagen-header">
+          <Image width="100%" src={logo2} alt="Segun Adebayo" />
+          </div>
+          <CartComponent/>
+        </div>
 		<Tabs isFitted variant="enclosed">
 			<TabList>
 				<Tab _selected={{ color: "white", bg: "green.300" }}> Productos</Tab>

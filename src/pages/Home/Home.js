@@ -3,6 +3,7 @@ import { Search2Icon, Icon } from '@chakra-ui/icons';
 import { BsFillCameraFill } from "react-icons/bs";
 import './css/Home.css';
 import logo from '../form/img/AgroMarket.png';
+import logo2 from '../../img/AgroMarket.png';
 import planta from './img/homeplanta2.jpg';
 import { useState, useRef , useContext } from "react";
 import { useHistory } from "react-router";
@@ -56,6 +57,13 @@ export const Home = () =>{
 
     return (
         <ServiceApi>
+            <div id="header" className="header">
+          <SimpleMenu/>
+          <div className="imagen-header">
+          <Image width="100%" src={logo2} alt="Segun Adebayo" />
+          </div>
+          <CartComponent/>
+        </div>
             <div className="home">
                 <Box>
                     <Image id="imagen" boxSize="200px" src={logo} />
