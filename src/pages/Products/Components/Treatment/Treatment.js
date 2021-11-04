@@ -40,7 +40,7 @@ const Treatment = ({ id, name, products }) => {
 
         <AccordionItem bg="#EBFFF8" borderRadius="30" mb="30" pb="0.1" >
             <h2>
-                <AccordionButton h="28" _expanded={{ pb: "5", bg: "blackAlpha.50", borderRadius: "30" }} _hover={{ bg: "blackAlpha.50", borderRadius: "30" }}>
+                <AccordionButton h="28" _expanded={{ pb: "5", bg: "blackAlpha.50", borderRadius: "30" }} _hover={{ bg: "blackAlpha.50", borderRadius: "30" }} _focus={{borderRadius:"30"}}>
                     <Checkbox size="lg" isChecked={allChecked} isIndeterminate={isIndeterminate} onChange={HandleChangeCheckAll}>
                         <Text color="#24903c" fontSize="20px" fontStyle="initial" textTransform="capitalize" fontWeight="bold">{name}</Text>
                     </Checkbox>

@@ -4,14 +4,15 @@ import { BsFillCameraFill } from "react-icons/bs";
 import './css/Home.css';
 import logo from '../form/img/AgroMarket.png';
 import planta from './img/homeplanta2.jpg';
-import { useState, useRef } from "react";
+import { useState, useRef , useContext } from "react";
 import { useHistory } from "react-router";
 import {ServiceApi} from '../../services/ServiceApi';
 import { SimpleMenu } from "../components/SimpleMenu";
 import { CartComponent } from "../components/CartComponent";
+import UserContext from "../../services/context/UserContext";
 export const Home = () =>{
     const history = useHistory();
-
+    const { GetToken, SetToken, ServiceRest } = useContext(UserContext)
 
     const fileInputRef = useRef(null);
     const [plantImg, setPlantImg] = useState('');
@@ -45,8 +46,12 @@ export const Home = () =>{
 
     const directproducts = (event) => {
         event.preventDefault();
-        sessionStorage.setItem("plantImage", plantImg);
-        history.push(`/products/${fileName}`);
+        if(GetToken()===""){
+            history.push("/login");
+        }else{
+            sessionStorage.setItem("plantImage", plantImg);
+            history.push(`/products/${fileName}`);
+        }
     }
 
     return (
