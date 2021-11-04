@@ -56,41 +56,6 @@ export const Product = () => {
 		<Container maxW={'8xl'}>
 			<SimpleMenu></SimpleMenu>
             <CartComponent></CartComponent>
-			<HStack justify={'right'} py={6}>
-				<Button leftIcon={<CircleIcon boxSize={7} color="red.500" />} colorScheme="teal" variant="solid">
-					{itemsCounter}
-				</Button>
-			</HStack>
-			<Stack
-				align={'center'}
-				spacing={{ base: 8, md: 20 }}
-				py={{ base: 0, md: 28 }}
-				direction={{ base: 'column', md: 'row' }}
-			/>
-				<Stack flex={1} spacing={{ base: 5, md: 10 }}>
-					<Blob
-						w={'80%'}
-						h={'55%'}
-						position={'absolute'}
-						top={{ base: '6%', lg: '28%' }}
-						left={{ base: 2, md: -300, lg: -380 }}
-						zIndex={-1}
-						color={useColorModeValue('green.300', 'green.200')}
-					/>
-					<Box
-						position={'relative'}
-						height={'380px'}
-						rounded={'2xl'}
-						boxShadow={'2xl'}
-						width={'full'}
-						overflow={'hidden'}
-					>
-						<Image
-							alt={'Product Image'}
-							fit={'cover'}
-							></Image>
-							</Box>
-				</Stack>
 		<Tabs isFitted variant="enclosed">
 			<TabList>
 				<Tab _selected={{ color: "white", bg: "green.300" }}> Productos</Tab>
@@ -99,11 +64,6 @@ export const Product = () => {
 			<TabPanels>
     			<TabPanel>
 					<Container maxW={'8xl'}>
-						<HStack justify={'right'} py={6}>
-							<Button leftIcon={<CircleIcon boxSize={7} color="red.500" />} colorScheme="teal" variant="solid">
-								{itemsCounter}
-							</Button>
-						</HStack>
 						<Stack
 							align={'center'}
 							spacing={{ base: 8, md: 20 }}
