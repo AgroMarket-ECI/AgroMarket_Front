@@ -12,7 +12,7 @@ export const ByImage = () => {
 
   const plants = [
     {
-      imageUrl: "https://www.jardineriaon.com/wp-content/uploads/2014/10/Agalla_de_Salix_fragilis.jpg",
+      imageUrl: "https://4.bp.blogspot.com/--l4ak2gUh9Y/W4opGWHYMpI/AAAAAAAAGZM/Pwh8vDEdR9Y3k5mjSBCt5TzvKLI65uZ1wCLcBGAs/s1600/800px-Eriophyes_tilae_tilae_detail.JPG",
       imageAlt: "Agallas rojo",
       title: "Agallas rojas"
     },
@@ -27,7 +27,7 @@ export const ByImage = () => {
       title: "Tizón de la hoja",
     },
     {
-      imageUrl: "https://www.arvensis.com/blog/wp-content/uploads/2020/04/Late-blight-Tiz%C3%B3n-tard%C3%ADo-Mildiu-de-la-patata.jpg",
+      imageUrl: "https://miro.medium.com/max/5120/1*XQm8ydsK4eL7BzBrfGYdrg.jpeg",
       imageAlt: "Tizón tardío o mildiu de la papa",
       title: "Tizón tardío o mildiu de la papa",
     }
