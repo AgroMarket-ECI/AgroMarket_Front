@@ -46,7 +46,7 @@ const Products = () => {
       <div class="frow">
         <div class="col col1">
           <Center>
-            <Image src={logo} boxSize="40" fit="scale-down" />
+            
           </Center>
           <CardPlant image={plantImage} name={problem.name} description={problem.description} />
         </div>
