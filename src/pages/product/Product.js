@@ -20,7 +20,9 @@ import {
 	TabList, 
 	TabPanels, 
 	Tab, 
-	TabPanel
+	TabPanel, 
+	Avatar,
+	Center
 } from '@chakra-ui/react';
 
 import { SimpleMenu } from "../components/SimpleMenu";
@@ -52,6 +54,7 @@ export const Product = () => {
 
 	return (
 		<Container maxW={'8xl'}>
+
 			<HStack justify={'right'} py={6}>
 				<Button leftIcon={<CircleIcon boxSize={7} color="red.500" />} colorScheme="teal" variant="solid">
 					{itemsCounter}
@@ -87,19 +90,15 @@ export const Product = () => {
 							></Image>
 							</Box>
 				</Stack>
+
 		<Tabs isFitted variant="enclosed">
 			<TabList>
 				<Tab _selected={{ color: "white", bg: "green.300" }}> Productos</Tab>
-				<Tab _selected={{ color: "white", bg: "green.300" }}>Manuel de uso</Tab>
+				<Tab _selected={{ color: "white", bg: "green.300" }}>Manual de uso</Tab>
 			</TabList>
 			<TabPanels>
     			<TabPanel>
 					<Container maxW={'8xl'}>
-						<HStack justify={'right'} py={6}>
-							<Button leftIcon={<CircleIcon boxSize={7} color="red.500" />} colorScheme="teal" variant="solid">
-								{itemsCounter}
-							</Button>
-						</HStack>
 						<Stack
 							align={'center'}
 							spacing={{ base: 8, md: 20 }}
@@ -118,11 +117,10 @@ export const Product = () => {
 								/>
 								<Box
 									position={'relative'}
-									maxH="380px"
-									height={'200px'}
+									height={'280px'}
 									rounded={'2xl'}
 									boxShadow={'2xl'}
-									width={'full'}
+									width={"full"}
 									overflow={'hidden'}
 
 								>
@@ -186,14 +184,13 @@ export const Product = () => {
 									</Button>
 								</Stack>
 								<Text fontSize={'100%'}>
-									Con el fungicida Daconil® listo para usar, usted puede prevenir las enfermedades causadas por
-									hongos antes de que broten, o combatirlas para detener y controlar las enfermedades activas. La
-									botella con rociador lista para llevar simplifica el tratamiento a sus plantas de flores,
-									vegetales, frutales, arbustos y árboles, con una protección resistente a la lluvia en la que
-									puede confiar.
+								Herbicida selectivo y preemergente que tiene acción contra las malezas indicadas, 
+								en aplicaciones sin incorporación por su especial formulación, la que no se volatiliza 
+								ni es degradada por rayos solares (ultravioletas).
 								</Text>
 								
 							</Stack>
+							
 						</Stack>
 						<HStack>
 							<Heading lineHeight={1.1} fontWeight={500} fontSize={{ base: '3xl', sm: '4xl', lg: '5xl' }}>
@@ -218,7 +215,45 @@ export const Product = () => {
 					</Container>
 				</TabPanel>
 				<TabPanel>
-					hola
+				<Center py={6}>
+					<Box
+						maxW={'445px'} w={'full'} bg={useColorModeValue('white', 'gray.900')} boxShadow={'2xl'} rounded={'md'} p={6} overflow={'hidden'}>
+						<Box h={'auto'} bg={'gray.100'} mt={-6} mx={-6} mb={6} pos={'relative'}>
+						<Image
+							src={
+							'https://www.opia.cl/601/articles-81762_recurso_01.jpg'
+							}
+							layout={'fill'}
+						/>
+						</Box>
+						<Stack>
+							<Text
+								color={'green.300'}
+								textTransform={'uppercase'}
+								fontWeight={800}
+								fontSize={'sm'}
+								letterSpacing={1.1}>
+								Parásito de la polilla del Álamo
+							</Text>
+							<Heading
+								color={useColorModeValue('gray.700', 'white')}
+								fontSize={'2xl'}
+								fontFamily={'body'}>
+								Uso del tratamiento
+							</Heading>
+						</Stack>
+						<Stack mt={6} direction={'row'} spacing={4} align={'center'}>
+							<Stack direction={'column'} spacing={0} fontSize={'sm'}>
+								<Text color={'gray.500'}>- Usar 20 Litros del producto 1 y esperar al rededor de 2 horas</Text>
+							</Stack>
+						</Stack>
+						<Stack mt={6} direction={'row'} spacing={4} align={'center'}>
+							<Stack direction={'column'} spacing={0} fontSize={'sm'}>
+								<Text color={'gray.500'}>- Colocar en la matera y regar con agua</Text>
+							</Stack>
+						</Stack>
+					</Box>
+					</Center>
 				</TabPanel>
 			</TabPanels>
 		</Tabs>
@@ -238,3 +273,9 @@ export const Blob = (props) => {
 		</Icon>
 	);
 };
+
+/*export const Product = (props) => {
+	return (
+		
+	);
+};*/
