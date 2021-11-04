@@ -10,8 +10,12 @@ import UploadPlant from './pages/plant/upload/UploadPlant';
 import { ByImage } from './pages/plant/byImage/ByImage';
 import { Home } from "./pages/Home/Home";
 import { Product } from './pages/product/Product';
+import Products  from './pages/Products/Products';
+import { DataProvider } from './providers/DataProvider';
+import './index.css'
 
 ReactDOM.render(
+ <DataProvider> 
   <ChakraProvider>
     <React.StrictMode>
       <BrowserRouter>
@@ -27,6 +31,7 @@ ReactDOM.render(
         </Switch>
       </BrowserRouter>
     </React.StrictMode>
-  </ChakraProvider>,
+  </ChakraProvider>
+  </DataProvider> ,
   document.getElementById('root')
 );
