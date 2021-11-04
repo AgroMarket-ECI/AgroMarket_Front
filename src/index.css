@@ -13,3 +13,16 @@ code {
     monospace;
   
 }
+.Cart,
+.boton-hamburguesa{
+  width:35px;
+  top : 5%;
+  position:fixed;
+}
+
+.boton-hamburguesa{
+  left : 10%;
+}
+.Cart{
+  right: 10%;
+}

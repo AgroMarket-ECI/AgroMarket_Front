@@ -6,6 +6,7 @@ import { useHistory } from "react-router";
 import { Image, FormLabel, Input, Button} from "@chakra-ui/react";
 import { Password } from "./Password";
 import { Link } from "react-router-dom";
+import { SimpleMenu } from "../components/SimpleMenu";
 import  UserContext  from "../../services/context/UserContext";
 export const Login = () => {
 
@@ -25,7 +26,11 @@ export const Login = () => {
         });
     }
     return(
+        
         <div id="form" className="formulario">
+            <SimpleMenu></SimpleMenu>
+            
+            
             <div id="imagen">
                 <Image width="100%" src={logo} alt="Segun Adebayo" />
             </div>
@@ -42,9 +47,11 @@ export const Login = () => {
                     Iniciar Sesión
                 </Button> 
             </div>
+           
             <div id="link" >
                 <Link className="link" to = "/signUp">No tengo cuenta. Registrarme</Link>
             </div>
+           
         </div>
   
 
