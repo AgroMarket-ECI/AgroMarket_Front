@@ -6,8 +6,10 @@ import logo from '../form/img/AgroMarket.png';
 import planta from './img/homeplanta2.jpg';
 import { useState, useRef } from "react";
 import { useHistory } from "react-router";
-import { ServiceApi } from '../../services/ServiceApi';
-export const Home = () => {
+import {ServiceApi} from '../../services/ServiceApi';
+import { SimpleMenu } from "../components/SimpleMenu";
+import { CartComponent } from "../components/CartComponent";
+export const Home = () =>{
     const history = useHistory();
 
 
