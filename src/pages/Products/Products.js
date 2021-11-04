@@ -1,13 +1,29 @@
-import React, { useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import CardPlant from './Components/CardPlant/CardPlant'
 import { Box, Accordion, Image, Center } from '@chakra-ui/react'
 import './Products.css'
 import Treatment from './Components/Treatment/Treatment.js'
 import { useData } from "../../providers/DataProvider";
 import logo from "../../assets/images/AgroMarket.png";
+import UserContext from "../../services/context/UserContext";
+import { useParams } from "react-router";
+
 const Products = () => {
+  const { fileName } = useParams();
+  const { GetToken, SetToken, ServiceRest } = useContext(UserContext)
   const { data, setData } = useData();
   const treatments = data.treatments;
+  const [plantImage, setPlantImage] = useState("");
+  const [treatmentsApi, setTreatmetsApi] = useState({});
+
+  useEffect(() => {
+    setPlantImage(sessionStorage.getItem("plantImage"));
+    sessionStorage.removeItem("plantImage");
+    ServiceRest("GET", `v1/recommendation/${fileName}`, "", (data) => {
+      console.log(data)
+      setTreatmetsApi(data);
+    });
+  }, []);
 
   return (
 
@@ -17,12 +33,12 @@ const Products = () => {
           <Center>
             <Image src={logo} boxSize="40" fit="scale-down" />
           </Center>
-          <CardPlant />
+          <CardPlant image={plantImage} />
         </div>
         <div class="col col2">
           <Box >
             <Accordion allowToggle >
-              {treatments.map((t) => <Treatment id={t.id} name={t.name} products={t.products} />)}
+              {treatmentsApi.map((t) => <Treatment id={t.id} name={t.name} products={t.products} />)}
             </Accordion>
           </Box>
         </div>

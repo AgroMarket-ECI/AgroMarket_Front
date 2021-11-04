@@ -3,6 +3,7 @@ import { Box, AccordionPanel, Checkbox, Flex, Image, Text, IconButton, Divider, 
 import { AddIcon } from '@chakra-ui/icons'
 const Item = ({ isChecked, onChange, id, name, url, description, price }) => {
 
+    const imgUrl = `../../../../assets/images/${url}`;
     const ColorComponent = {
         backgroundColor: isChecked ? "#79a8bb" : "whitesmoke"
     };
@@ -19,7 +20,7 @@ const Item = ({ isChecked, onChange, id, name, url, description, price }) => {
                 <Box p={3} display={{ md: "flex" }}>
                     <Box flexShrink={0} >
                         <Center>
-                            <Image src={url} boxSize="90px" objectFit="scale-down" />
+                            <Image src={imgUrl} boxSize="90px" objectFit="scale-down" />
                         </Center>
                     </Box>
                     <Center>
@@ -28,7 +29,7 @@ const Item = ({ isChecked, onChange, id, name, url, description, price }) => {
                                 {name}
                             </Text>
                             <Text ml={{ base: 0, md: 3 }} fontSize="sm">{description}</Text>
-                            <Text ml={{ base: 0, md: 3 }}  fontSize="m" fontWeight="semibold">$ {price}</Text>
+                            <Text ml={{ base: 0, md: 3 }} fontSize="m" fontWeight="semibold">$ {price}</Text>
                         </Box>
                     </Center>
                 </Box>

@@ -24,7 +24,7 @@ export const ServiceApi = (props) =>{
                 axios({
                 method: rest,
                 headers: header,
-                url: "http://localhost:8080/"+ uri,
+                url: "https://agromarketeci.herokuapp.com/"+ uri,
                 data: datas
             }).then((data)=>{
                 callback(data.data)

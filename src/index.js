@@ -22,7 +22,7 @@ ReactDOM.render(
       <BrowserRouter>
         <Switch>
         <Route exact path="/product" component={Product}/>
-        <Route exact path="/products" component={Products} />
+        <Route path="/products/:fileName" component={Products} />
         <Route exact path="/login" component={Login}/>
         <Route exact path="/signUp" component={SignUp}/>
         <Route exact path="/plant/image" component={ByImage}/>
