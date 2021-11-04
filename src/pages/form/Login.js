@@ -22,7 +22,7 @@ export const Login = () => {
         ServiceRest("POST","v1/auth",dates,(data)=>{
             console.log(data)
             SetToken(data.token);
-            //history.push('/Login');
+            history.push('/home');
         });
     }
     return(
