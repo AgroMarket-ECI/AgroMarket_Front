@@ -51,7 +51,6 @@ export const Product = () => {
 	};
 
 	return (
-<<<<<<< HEAD
 		<Container maxW={'8xl'}>
 			<SimpleMenu></SimpleMenu>
             <CartComponent></CartComponent>
@@ -65,7 +64,7 @@ export const Product = () => {
 				spacing={{ base: 8, md: 20 }}
 				py={{ base: 0, md: 28 }}
 				direction={{ base: 'column', md: 'row' }}
-			>
+			/>
 				<Stack flex={1} spacing={{ base: 5, md: 10 }}>
 					<Blob
 						w={'80%'}
@@ -87,7 +86,9 @@ export const Product = () => {
 						<Image
 							alt={'Product Image'}
 							fit={'cover'}
-=======
+							></Image>
+							</Box>
+				</Stack>
 		<Tabs isFitted variant="enclosed">
 			<TabList>
 				<Tab _selected={{ color: "white", bg: "green.300" }}> Productos</Tab>
@@ -102,7 +103,6 @@ export const Product = () => {
 							</Button>
 						</HStack>
 						<Stack
->>>>>>> 6707cec6303f54817d427718d129b94143fc608e
 							align={'center'}
 							spacing={{ base: 8, md: 20 }}
 							py={{ base: 0, md: 28 }}
@@ -224,6 +224,7 @@ export const Product = () => {
 				</TabPanel>
 			</TabPanels>
 		</Tabs>
+		</Container>
 	);
 };
 
