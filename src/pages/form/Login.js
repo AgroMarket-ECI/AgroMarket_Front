@@ -1,18 +1,28 @@
 import './css/Login.css';
 import './css/Form.css';
 import logo from './img/AgroMarket.png';
+import { useContext } from "react";
 import { useHistory } from "react-router";
 import { Image, FormLabel, Input, Button} from "@chakra-ui/react";
 import { Password } from "./Password";
 import { Link } from "react-router-dom";
+import  UserContext  from "../../services/context/UserContext";
 export const Login = () => {
 
     const history = useHistory();
 
-
+    const { GetToken,SetToken,ServiceRest } = useContext(UserContext)
     const sendDates = (event) => {
         event.preventDefault();
-        history.push('/product');
+        const dates={
+            email:document.getElementById("field-correo").value,
+            password:document.getElementById("fieldcontrasena").value,
+        }
+        ServiceRest("POST","v1/auth",dates,(data)=>{
+            console.log(data)
+            SetToken(data.token);
+            //history.push('/Login');
+        });
     }
     return(
         <div id="form" className="formulario">
@@ -21,11 +31,11 @@ export const Login = () => {
             </div>
             <div id="Usuario" className="field">
                 <FormLabel>Usuario</FormLabel>
-                <Input placeholder="Escribe tu usuario" className="field-text" />
+                <Input id="field-correo" placeholder="Escribe tu usuario" className="field-text" />
             </div>
             <div id="Contrasena" className="field">
                 <FormLabel>Contraseña</FormLabel>
-                <Password pholder="Escribe tu contraseña"/>
+                <Password idFiel="fieldcontrasena" pholder="Escribe tu contraseña"/>
             </div>
             <div id="boton" className="field">    
                 <Button className="field-button" onClick={sendDates} border="solid 1px" colorScheme="red" size="md">

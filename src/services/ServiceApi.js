@@ -11,22 +11,26 @@ export const ServiceApi = (props) =>{
 
     const SetToken = (varToken) =>{
         token=varToken;
+        console.log(token);
     }
 
     
     
-    function ServiceRest (rest,uri,datas){
+    function ServiceRest (rest,uri,datas,callback){
         const header = {
             "Content-type" : "application/json",
             "Authorization" : "Bearer " + token
         }
-        axios({
-            method: rest,
-            headers: header,
-            url: "https://agromarketeci.herokuapp.com/v1/health",
-            data: datas
-        });
-    };
+                axios({
+                method: rest,
+                headers: header,
+                url: "http://localhost:8080/"+ uri,
+                data: datas
+            }).then((data)=>{
+                callback(data.data)
+            })
+    
+    }
 
 
     return(

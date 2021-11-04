@@ -11,12 +11,25 @@ export const SignUp= () => {
 
     const history = useHistory();
     const { GetToken,SetToken,ServiceRest } = useContext(UserContext)
-
-    console.log(ServiceRest("GET","",""));
+ 
+    
+    
+    
 
     const sendDates = (event) => {
         event.preventDefault();
-        history.push('/Login');
+        const dates={
+            email:document.getElementById("field-correo").value,
+            password:document.getElementById("fieldcontrasena").value,
+            role:"C"
+        }
+       
+        ServiceRest("POST","v1/user",dates,(data)=>{
+            
+            console.log(data)
+            history.push('/Login');
+        });
+        
     }
     return(
     
@@ -26,18 +39,18 @@ export const SignUp= () => {
                     <Text>Registro Usuario</Text>
                 </div>
             </div>
-            <FormControl id="first-name" isRequired>
+            <FormControl isRequired>
                 <div id="Usuario" className="field">
                     <FormLabel>Usuario</FormLabel>
                     <Input placeholder="Escribe tu nombre de usuario" className="field-text"/>
                 </div>
                 <div id="Correo" className="field">
                     <FormLabel>Correo</FormLabel>
-                    <Input type="email" placeholder="Escribe tu email" className="field-text"/>
+                    <Input id="field-correo" type="email" placeholder="Escribe tu email" className="field-text"/>
                 </div>
                 <div id="Contrasena" className="field">
                     <FormLabel>Contraseña</FormLabel>
-                    <Password pholder={"Crea tu contraseña"}/>
+                    <Password pholder={"Crea tu contraseña"} idFiel={"fieldcontrasena"}/>
                 </div>
                 <div id="confirmar-con" className="field">
                     <FormLabel>Confirmar contraseña</FormLabel>
