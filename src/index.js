@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import NotFound from "./pages/notFound/NotFound"
 import { ChakraProvider } from "@chakra-ui/react"
@@ -16,12 +16,13 @@ ReactDOM.render(
     <React.StrictMode>
       <BrowserRouter>
         <Switch>
-        <Route path="/product" component={Product}/>
-        <Route path="/login" component={Login}/>
-        <Route path="/signUp" component={SignUp}/>
-        <Route  path="/plant/upload" component={UploadPlant}/>
-        <Route path="/plant/image" component={ByImage}/>
-        <Route path="/home" component={Home}/>
+        <Route exact path="/product" component={Product}/>
+        <Route exact path="/products" component={Products} />
+        <Route exact path="/login" component={Login}/>
+        <Route exact path="/signUp" component={SignUp}/>
+        <Route exact path="/plant/upload" component={UploadPlant}/>
+        <Route exact path="/plant/image" component={ByImage}/>
+        <Route exact path="/home" component={Home}/>
         <Route component={NotFound} />
         </Switch>
       </BrowserRouter>
