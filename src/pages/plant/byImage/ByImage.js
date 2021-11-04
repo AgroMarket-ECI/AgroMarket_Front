@@ -1,5 +1,6 @@
 import React from "react";
-import Carousel from "react-elastic-carousel";
+import {Carousel } from "react-elastic-carousel";
+import {SimpleGrid} from "@chakra-ui/react";
 import { PlantItem } from "./PlantItem";
 import "./css/ByImage.css";
 
@@ -41,6 +42,7 @@ export const ByImage = () => {
         <div className="carosusel">
           <p className="plantName">Salix fragilis</p>
           <br />
+          <SimpleGrid minChildWidth="250px">
             {plants.map((plant) => {
                 return (
                   <PlantItem className="plantitems"
@@ -50,6 +52,7 @@ export const ByImage = () => {
                   />
                 );
               })}
+          </SimpleGrid>
         </div>
       </div>
     </div>
