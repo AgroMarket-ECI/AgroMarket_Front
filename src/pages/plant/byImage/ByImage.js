@@ -33,7 +33,7 @@ export const ByImage = () => {
     }
   ];
   return (
-    <>
+    <div id="plantsimage">
       <div>
         <p className="titleImage">Selecciona la imagen de como luce tu planta</p>
       </div>
@@ -41,19 +41,17 @@ export const ByImage = () => {
         <div className="carosusel">
           <p className="plantName">Salix fragilis</p>
           <br />
-          <Carousel breakPoints={breakPoints}>
             {plants.map((plant) => {
                 return (
-                  <PlantItem
+                  <PlantItem className="plantitems"
                     imageUrl={plant.imageUrl}
                     imageAlt={plant.imageAlt}
                     title={plant.title}
                   />
                 );
               })}
-          </Carousel>
         </div>
       </div>
-    </>
+    </div>
   );
 }

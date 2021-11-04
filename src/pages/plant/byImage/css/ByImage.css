@@ -1,20 +1,24 @@
-.titleImage{
+*{margin: 0 ;
+padding: 0;}
+
+#plantsimage{
+  padding: 5%;
+} 
+#plantsimage .titleImage{
   text-align: center;
   margin-top: 5%;
   font-size: 210%;
 }
 
-.plantName{
+#plantsimage .plantitems{
+  margin: 0 auto;
+  text-align: center;
+}
+
+#plantsimage .plantName{
   text-align: center;
   margin-top: 5%;
   font-size: 220%;
   color:rgb(89, 139, 139);
-}
 
-.carosusel {
-    font-family: sans-serif;
-    align-items: center;
-    justify-content: center;
-    height: 50vh;
-  }
-  
+}

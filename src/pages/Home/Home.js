@@ -3,64 +3,97 @@ import { Search2Icon, Icon } from '@chakra-ui/icons';
 import { BsFillCameraFill } from "react-icons/bs";
 import './css/Home.css';
 import logo from '../form/img/AgroMarket.png';
-
+import planta from './img/homeplanta2.jpg';
+import { useState, useRef} from "react";
+import { useHistory } from "react-router";
+import {ServiceApi} from '../../services/ServiceApi';
 export const Home = () =>{
+    const history = useHistory();
+
+    const fileInputRef = useRef(null);
+    const [plantImg, setPlantImg] = useState('');
+
+    const imgchange = (event) =>{
+        event.preventDefault();
+        fileInputRef.current.click();
+    }
+
+    var imageHandler = (e) => {
+        const reader = new FileReader();
+        reader.onload = () => {
+            if (reader.readyState === 2) {
+                setPlantImg(reader.result)
+            }
+        }
+        if(e.target.files[0]){
+            reader.readAsDataURL(e.target.files[0])
+        }
+            
+    };
+
+    const directplantname = (event) =>{
+        event.preventDefault();
+        history.push("/plant/image");
+    }
+
+    const directproducts = (event) =>{
+        event.preventDefault();
+        history.push("/products");
+    }
+
     return (
+        <ServiceApi>
         <div className="home">
-            <Center>
-                <Box>
+            <Box>
+                <Image id="imagen" boxSize="200px" src={logo}/>  
+                <br />
+                <Text fontSize="xl" width="100%" textAlign={[ 'center' ]} color="Gray">
+                    Te brindamos las mejores soluciones para combatir la enfermedad de tu planta de una forma rapida y eficiente.
+                </Text>    
+                <br />
+                <Text fontSize="xl" width="100%" textAlign={[ 'center' ]} color="Gray">
+                    Selecciona la forma en que deseas realizar la búsqueda
+                </Text>
+                
+                <br />   
+                <SimpleGrid minChildWidth="230px" spacing="40px">
                     <Center>
-                    <Image id="imagen" boxSize="200px" src={logo}/>  
+                    <Box w="100%">
+                        <Center>
+                        <InputGroup width="100%" maxW="300px" className="inputplanta">
+                            <InputLeftElement pointerEvents="none" children={<Search2Icon color="gray.300" />}/>
+                            <Input  background="white" type="text" placeholder="Buscar por Nombre de la planta" />
+                        </InputGroup>
+                        </Center>
+                        <br />  
+                        <Center>
+                            <Button border="solid 1px" maxW="300px" colorScheme="red" width="100%" onClick={directplantname}>Buscar</Button>
+                        </Center>
+                    </Box>
                     </Center>
-                    <br />
-                    <Center>
-                        <Text fontSize="2xl" width="80%" textAlign={[ 'center' ]} >
-                            Tenemos la mejor solución para combatir la enfermedad de tu planta. Con ayuda de la mejor 
-                            tecnologia te recomendaremos productos que te permitan tratar y curar cualquier enfermedad. Y no te preocupes,
-                            también podrás adquirir estos productos a través de nuestra tienda virtual.
-                        </Text>
-                    </Center>
+                    <Box w="100%">
+                        <Center>
+                            <Image src={plantImg} alt="" maxW="90%" maxH="100px"/>
+                        </Center>
+                        <input type="file" id="input" ref={fileInputRef} accept="image/*" onChange={imageHandler} />
+                        <Center>
+                            <Button border="solid 1px" maxW="300px" bg="#389541" onClick={imgchange} width="100%" color="white">
+                                <i className="material-icons">add_photo_alternate</i>
+                                Sube la foto de tu planta
+                            </Button>
+                        </Center>
                         <br />
-                    <Center>
-                        <Text fontSize="2xl" width="80%" textAlign={[ 'center' ]} >
-                            Selecciona la forma en que deseas realizar la búsqueda
-                        </Text>
-                    </Center>
-                    <br />
-                    <br />
-                    <SimpleGrid minChildWidth="180px" spacing="40px">
-                        <Box>
-                            <Center>
-                            <Search2Icon w={10} h={10}/>
-                            </Center>
-                            <br />
-                            <Center>
-                            <InputGroup width="260px">
-                                <InputLeftElement
-                                pointerEvents="none"
-                                children={<Search2Icon color="gray.300" />}
-                                />
-                                <Input variant="filled" type="tel" placeholder="Nombre de la planta" />
-                            </InputGroup>
-                            </Center>
-                            <br />
-                            <Center>
-                            <Button border="solid 1px" color="black" colorScheme="red">Buscar por nombre de la planta</Button>
-                            </Center>
-                        </Box>
-                        <Box>
-                            <Center>
-                            <Icon as={BsFillCameraFill} w={10} h={10}/>
-                            </Center>
-                            <br />
-                            <Center>
-                            <Button border="solid 1px" color="black" colorScheme="red">Buscar por foto</Button>
-                            </Center>
-                        </Box>
-                    </SimpleGrid>
-                </Box>
-            </Center>
+                        <Center>
+                            <Button border="solid 1px" maxW="300px" colorScheme="red" width="100%" onClick={directproducts}>Buscar</Button>
+                        </Center>
+                    </Box>
+                </SimpleGrid>
+                <br />
+                <br />
+                
+            </Box>
         </div>
+        </ServiceApi>
     )
 
 };

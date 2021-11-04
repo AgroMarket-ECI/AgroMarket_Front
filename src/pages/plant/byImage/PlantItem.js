@@ -10,18 +10,17 @@ export const PlantItem = ({ imageUrl, imageAlt, title }) => {
     };    
 
     return (
-        <Box as="button" maxW="xs" borderWidth="1px" borderRadius="lg" overflow="hidden" borderColor="black" onClick={clickChange}>
-            <Image src={imageUrl} alt={imageAlt} />
-            <Box p="6">
-                <Box
+        <Box padding="0.5%" margin="17px" bd="red" as="button" maxW="300px" borderWidth="1px" borderRadius="lg" overflow="hidden" borderColor="black" onClick={clickChange}>
+            <Box>
+                <Image w="100%" src={imageUrl} alt={imageAlt}/>
+            </Box>
+                <Box 
                     mt="1"
                     fontWeight="semibold"
                     as="h4"
-                    lineHeight="tight"
                     isTruncated
                 >
-                    {title}
-                </Box>
+                {title}
             </Box>
         </Box>
     )
