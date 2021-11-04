@@ -52,8 +52,6 @@ export const Product = () => {
 
 	return (
 		<Container maxW={'8xl'}>
-			<SimpleMenu></SimpleMenu>
-            <CartComponent></CartComponent>
 			<HStack justify={'right'} py={6}>
 				<Button leftIcon={<CircleIcon boxSize={7} color="red.500" />} colorScheme="teal" variant="solid">
 					{itemsCounter}

@@ -28,7 +28,7 @@ export const Login = () => {
     return(
         
         <div id="form" className="formulario">
-            <SimpleMenu></SimpleMenu>
+          
             
             
             <div id="imagen">

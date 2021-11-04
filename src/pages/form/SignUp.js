@@ -35,7 +35,7 @@ export const SignUp= () => {
     return(
     
         <div id="Registro" className="formulario">
-            <SimpleMenu></SimpleMenu>
+            
             <div id="registro-titulo">
                 <div id="registro-titulo-texto">
                     <Text>Registro Usuario</Text>

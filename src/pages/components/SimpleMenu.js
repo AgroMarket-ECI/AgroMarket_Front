@@ -15,7 +15,7 @@ export const SimpleMenu = () =>{
             <MenuButton
               position="relative"
               w = "100%"
-              as={IconButton}
+              
               aria-label="Options"
               variant="outline"> 
               <Image className="imagen-boton-hamburguesa" width="100%" src="https://www.samueldiosdado.com/wp-content/uploads/2017/08/Men%C3%BA-hamburguesa-herramienta-practica-o-icono-inutil.png" alt="Segun Adebayo" />

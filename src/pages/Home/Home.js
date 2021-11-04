@@ -33,8 +33,6 @@ export const Home = () =>{
     return (
         <ServiceApi>
         <div className="home">
-            <SimpleMenu></SimpleMenu>
-            <CartComponent></CartComponent>
             <Box>
                 <Image id="imagen" boxSize="200px" src={logo}/>  
                 <br />
