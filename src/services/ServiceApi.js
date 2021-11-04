@@ -1,42 +1,41 @@
 import UserContext from "./context/UserContext";
-import { axios } from "axios";
+import  axios  from "axios";
 
-export const ServiceApi = () =>{
+export const ServiceApi = (props) =>{
 
     var token = "";
 
-    const getToken = () =>{
+    const GetToken = () =>{
         return token;
     }
 
-    const setToken = (varToken) =>{
+    const SetToken = (varToken) =>{
         token=varToken;
     }
 
-    const getHeader = () =>{
+    
+    
+    function ServiceRest (rest,uri,datas){
         const header = {
             "Content-type" : "application/json",
-            "Authentication" : "Bearer " + token
+            "Authorization" : "Bearer " + token
         }
-        
-        return header
-    }
-    
-    
-    const serviceRest = (rest,uri,datas) =>{
-            axios({
-                method: rest,
-                headers: getHeader(),
-                url: "http://localhost:"+ uri,
-                data: datas
-            })
-    }
+        axios({
+            method: rest,
+            headers: header,
+            url: "https://agromarketeci.herokuapp.com/v1/health",
+            data: datas
+        });
+    };
+
+
     return(
         <UserContext.Provider value={{
-            serviceRest,
-            setToken,
-            getToken
+            ServiceRest,
+            GetToken,
+            SetToken
         }}>
+            { props.children }
         </UserContext.Provider>
     )
 }

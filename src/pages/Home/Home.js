@@ -5,7 +5,7 @@ import './css/Home.css';
 import logo from '../form/img/AgroMarket.png';
 import planta from './img/homeplanta2.jpg';
 import { useState, useRef} from "react";
-
+import {ServiceApi} from '../../services/ServiceApi';
 export const Home = () =>{
     const fileInputRef = useRef(null);
     const [plantImg, setPlantImg] = useState('');
@@ -29,6 +29,7 @@ export const Home = () =>{
     };
 
     return (
+        <ServiceApi>
         <div className="home">
             <Box>
                 <Image id="imagen" boxSize="200px" src={logo}/>  
@@ -79,6 +80,7 @@ export const Home = () =>{
                 
             </Box>
         </div>
+        </ServiceApi>
     )
 
 };

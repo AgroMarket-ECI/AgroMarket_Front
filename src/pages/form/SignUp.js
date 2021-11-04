@@ -5,18 +5,21 @@ import { useContext } from "react";
 import { useHistory } from "react-router";
 import {  Text, FormLabel, Input, Button, FormControl} from "@chakra-ui/react";
 import { Password } from "./Password";
-//import { ServiceAPI } from "../../services/context/UserContext";
+import  UserContext  from "../../services/context/UserContext";
 
 export const SignUp= () => {
 
     const history = useHistory();
-//    const {getToken,setToken,serviceRest} = useContext(ServiceAPI)
+    const { GetToken,SetToken,ServiceRest } = useContext(UserContext)
+
+    console.log(ServiceRest("GET","",""));
 
     const sendDates = (event) => {
         event.preventDefault();
         history.push('/Login');
     }
     return(
+    
         <div id="Registro" className="formulario">
             <div id="registro-titulo">
                 <div id="registro-titulo-texto">
@@ -50,6 +53,9 @@ export const SignUp= () => {
             </div>
             </FormControl>
         </div>
+      
+ 
+
   
 
 

@@ -10,12 +10,15 @@ import UploadPlant from './pages/plant/upload/UploadPlant';
 import { ByImage } from './pages/plant/byImage/ByImage';
 import { Home } from "./pages/Home/Home";
 import { Product } from './pages/product/Product';
-//import {ServiceApi} from './services/ServiceApi';
+import ServiceApi from './services/ServiceApi';
 ReactDOM.render(
+  
   <ChakraProvider>
     <React.StrictMode>
+      <ServiceApi>
       <BrowserRouter>
         <Switch>
+          
         <Route path="/product" component={Product}/>
         <Route path="/login" component={Login}/>
         <Route path="/signUp" component={SignUp}/>
@@ -24,8 +27,13 @@ ReactDOM.render(
         <Route path="/home" component={Home}/>
         <Route component={NotFound} />
         </Switch>
+        
       </BrowserRouter>
+      </ServiceApi>
+
     </React.StrictMode>
-  </ChakraProvider>,
+  </ChakraProvider>
+  
+   ,
   document.getElementById('root')
 );
