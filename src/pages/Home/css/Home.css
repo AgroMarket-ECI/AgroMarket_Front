@@ -7,13 +7,9 @@
 }
 
 .home{
-    position: absolute;
-    left: 10%;
-    right: 10%;
-}
-
-.inputplanta{
-    
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 80%;
 }
 
 .plantaimg{

@@ -8,7 +8,7 @@ import { useState, useRef} from "react";
 
 export const Home = () =>{
     const fileInputRef = useRef(null);
-    const [plantImg, setPlantImg] = useState('https://uxwing.com/wp-content/themes/uxwing/download/32-video-photography-multimedia/upload-image.png');
+    const [plantImg, setPlantImg] = useState('');
 
     const imgchange = (event) =>{
         event.preventDefault();
@@ -44,32 +44,39 @@ export const Home = () =>{
                 <br />   
                 <SimpleGrid minChildWidth="230px" spacing="40px">
                     <Center>
-                    <Box>
-                        <InputGroup width="100%" maxW="300px" minW="300px" className="inputplanta">
+                    <Box w="100%">
+                        <Center>
+                        <InputGroup width="100%" maxW="300px" className="inputplanta">
                             <InputLeftElement pointerEvents="none" children={<Search2Icon color="gray.300" />}/>
-                            <Input  background="white" type="tel" placeholder="Buscar por Nombre de la planta" />
+                            <Input  background="white" type="text" placeholder="Buscar por Nombre de la planta" />
                         </InputGroup>
+                        </Center>
+                        <br />  
+                        <Center>
+                            <Button border="solid 1px" maxW="300px" colorScheme="red" width="100%">Buscar</Button>
+                        </Center>
                     </Box>
                     </Center>
-                    <Box>
+                    <Box w="100%">
                         <Center>
                             <Image src={plantImg} alt="" maxW="90%" maxH="100px"/>
                         </Center>
                         <input type="file" id="input" ref={fileInputRef} accept="image/*" onChange={imageHandler} />
-                        <br />
                         <Center>
-                            <Button border="solid 1px" maxW="300px" colorScheme="red" onClick={imgchange} width="100%">
+                            <Button border="solid 1px" maxW="300px" bg="#389541" onClick={imgchange} width="100%" color="white">
                                 <i className="material-icons">add_photo_alternate</i>
                                 Sube la foto de tu planta
                             </Button>
+                        </Center>
+                        <br />
+                        <Center>
+                            <Button border="solid 1px" maxW="300px" colorScheme="red" width="100%">Buscar</Button>
                         </Center>
                     </Box>
                 </SimpleGrid>
                 <br />
                 <br />
-                <Center>
-                    <Button border="solid 1px" maxW="300px" colorScheme="red" width="100%">Buscar</Button>
-                </Center>
+                
             </Box>
         </div>
     )

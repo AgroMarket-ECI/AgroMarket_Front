@@ -43,7 +43,7 @@ export const ByImage = () => {
           <br />
             {plants.map((plant) => {
                 return (
-                  <PlantItem
+                  <PlantItem className="plantitems"
                     imageUrl={plant.imageUrl}
                     imageAlt={plant.imageAlt}
                     title={plant.title}
