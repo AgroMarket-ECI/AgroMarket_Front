@@ -7,6 +7,9 @@ import { useData } from "../../providers/DataProvider";
 import logo from "../../assets/images/AgroMarket.png";
 import UserContext from "../../services/context/UserContext";
 import { useParams } from "react-router";
+import { SimpleMenu } from "../components/SimpleMenu";
+import { CartComponent } from "../components/CartComponent";
+import logo2 from '../../img/AgroMarket.png';
 
 const Products = () => {
   const { fileName } = useParams();
@@ -28,6 +31,13 @@ const Products = () => {
   return (
 
     <div>
+      <div id="header" className="header">
+          <SimpleMenu/>
+          <div className="imagen-header">
+          <Image width="100%" src={logo2} alt="Segun Adebayo" />
+          </div>
+          <CartComponent/>
+        </div>
       <div class="frow">
         <div class="col col1">
           <Center>

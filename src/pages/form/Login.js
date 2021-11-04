@@ -6,8 +6,11 @@ import { useHistory } from "react-router";
 import { Image, FormLabel, Input, Button} from "@chakra-ui/react";
 import { Password } from "./Password";
 import { Link } from "react-router-dom";
-import { SimpleMenu } from "../components/SimpleMenu";
 import  UserContext  from "../../services/context/UserContext";
+import { SimpleMenu } from "../components/SimpleMenu";
+import { CartComponent } from "../components/CartComponent";
+import logo2 from '../../img/AgroMarket.png';
+
 export const Login = () => {
 
     const history = useHistory();
@@ -22,13 +25,19 @@ export const Login = () => {
         ServiceRest("POST","v1/auth",dates,(data)=>{
             console.log(data)
             SetToken(data.token);
-            //history.push('/Login');
+            history.push('/Home');
         });
     }
     return(
         
         <div id="form" className="formulario">
-            <SimpleMenu></SimpleMenu>
+            <div id="header" className="header">
+          <SimpleMenu/>
+          <div className="imagen-header">
+          <Image width="100%" src={logo2} alt="Segun Adebayo" />
+          </div>
+          <CartComponent/>
+        </div>
             
             
             <div id="imagen">
