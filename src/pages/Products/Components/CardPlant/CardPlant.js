@@ -2,7 +2,7 @@ import React from 'react'
 import { Box, Badge, Image } from '@chakra-ui/react'
 
 
-const CardPlant = ({ image }) => {
+const CardPlant = ({ image, name, description }) => {
   return (
     <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden" bg="#EBFFF8" boxShadow="2xl" borderRadius="20">
       <Image src={image} alt="" />
@@ -20,7 +20,7 @@ const CardPlant = ({ image }) => {
             textTransform="uppercase"
             ml="2"
           >
-            NOMBRE PLANTA
+            {name}
           </Box>
         </Box>
 
@@ -35,8 +35,7 @@ const CardPlant = ({ image }) => {
         </Box>
 
         <Box>
-          Lorem ipsum is simple dummy text on the printing and typesetting
-          industry.
+          {description}
         </Box>
       </Box>
     </Box>

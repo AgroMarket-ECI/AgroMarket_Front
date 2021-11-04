@@ -26,6 +26,7 @@ export const Login = () => {
             console.log(data)
             SetToken(data.token);
             history.push('/Home');
+
         });
     }
     return(

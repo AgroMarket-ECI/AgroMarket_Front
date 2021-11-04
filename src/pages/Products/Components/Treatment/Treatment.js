@@ -56,7 +56,7 @@ const Treatment = ({ id, name, products }) => {
                 <Divider borderColor="green" mt="2" />
             </AccordionPanel>
 
-            {products.map((p, index) => <Item isChecked={checkedItems[index]} onChange={() => HandleChangeCheckOne(index)} id={p.id} name={p.name} url={p.url}
+            {products.map((p, index) => <Item isChecked={checkedItems[index]} onChange={() => HandleChangeCheckOne(index)} id={p.id} name={p.name} url={p.image}
                 description={p.description} price={p.price} />)}
 
         </AccordionItem>

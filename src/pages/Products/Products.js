@@ -17,14 +17,19 @@ const Products = () => {
   const { data, setData } = useData();
   const treatments = data.treatments;
   const [plantImage, setPlantImage] = useState("");
-  const [treatmentsApi, setTreatmetsApi] = useState({});
+  const [treatmentsApi, setTreatmetsApi] = useState([]);
+  const [problem, setProblem] = useState([]);
 
   useEffect(() => {
     setPlantImage(sessionStorage.getItem("plantImage"));
-    sessionStorage.removeItem("plantImage");
     ServiceRest("GET", `v1/recommendation/${fileName}`, "", (data) => {
       console.log(data)
       setTreatmetsApi(data);
+    });
+
+    ServiceRest("GET", `v1/recommendation/info/${fileName}`, "", (data) => {
+      console.log(data)
+      setProblem(data);
     });
   }, []);
 
@@ -43,7 +48,7 @@ const Products = () => {
           <Center>
             <Image src={logo} boxSize="40" fit="scale-down" />
           </Center>
-          <CardPlant image={plantImage} />
+          <CardPlant image={plantImage} name={problem.name} description={problem.description} />
         </div>
         <div class="col col2">
           <Box >
