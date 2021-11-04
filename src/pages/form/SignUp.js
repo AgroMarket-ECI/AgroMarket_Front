@@ -5,12 +5,12 @@ import { useContext } from "react";
 import { useHistory } from "react-router";
 import {  Text, FormLabel, Input, Button, FormControl} from "@chakra-ui/react";
 import { Password } from "./Password";
-import { ServiceAPI } from "../../services/context/UserContext";
+//import { ServiceAPI } from "../../services/context/UserContext";
 
 export const SignUp= () => {
 
     const history = useHistory();
-    const {getToken,setToken,serviceRest} = useContext(ServiceAPI)
+//    const {getToken,setToken,serviceRest} = useContext(ServiceAPI)
 
     const sendDates = (event) => {
         event.preventDefault();

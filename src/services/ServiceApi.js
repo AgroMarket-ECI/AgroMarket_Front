@@ -37,7 +37,6 @@ export const ServiceApi = () =>{
             setToken,
             getToken
         }}>
-            {props.children}
         </UserContext.Provider>
     )
 }
