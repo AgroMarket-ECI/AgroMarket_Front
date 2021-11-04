@@ -11,3 +11,17 @@ code {
     monospace;
   
 }
+.Cart,
+.boton-hamburguesa{
+  width:35px;
+  top : 5%;
+  position:fixed;
+  z-index: 100;
+}
+
+.boton-hamburguesa{
+  left : 10%;
+}
+.Cart{
+  right: 10%;
+}

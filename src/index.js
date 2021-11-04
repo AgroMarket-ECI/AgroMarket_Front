@@ -3,11 +3,12 @@ import ReactDOM from 'react-dom';
 
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import NotFound from "./pages/notFound/NotFound"
-import { ChakraProvider } from "@chakra-ui/react"
-import { Login } from "./pages/form/Login";
-import { SignUp } from "./pages/form/SignUp";
-import { ByImage } from './pages/plant/byImage/ByImage';
-import { Home } from "./pages/Home/Home";
+import { ChakraProvider,Menu, MenuButton,Image,MenuList,MenuItem,Button  } from "@chakra-ui/react"
+import IconButton from "@chakra-ui/react";
+import  Login  from "./pages/form/Login";
+import  SignUp  from "./pages/form/SignUp";
+import { ByImage }  from './pages/plant/byImage/ByImage';
+import  Home  from "./pages/Home/Home";
 import { Product } from './pages/product/Product';
 import Products  from './pages/Products/Products';
 import { DataProvider } from './providers/DataProvider';
@@ -17,7 +18,10 @@ import './index.css'
 ReactDOM.render(
  <DataProvider> 
   <ChakraProvider>
+    
+   
     <React.StrictMode>
+    
       <ServiceApi>
       <BrowserRouter>
         <Switch>

@@ -7,6 +7,8 @@ import planta from './img/homeplanta2.jpg';
 import { useState, useRef} from "react";
 import { useHistory } from "react-router";
 import {ServiceApi} from '../../services/ServiceApi';
+import { SimpleMenu } from "../components/SimpleMenu";
+import { CartComponent } from "../components/CartComponent";
 export const Home = () =>{
     const history = useHistory();
 
@@ -44,6 +46,8 @@ export const Home = () =>{
     return (
         <ServiceApi>
         <div className="home">
+            <SimpleMenu></SimpleMenu>
+            <CartComponent></CartComponent>
             <Box>
                 <Image id="imagen" boxSize="200px" src={logo}/>  
                 <br />

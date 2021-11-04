@@ -3,15 +3,16 @@ import './css/SignUp.css';
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { useHistory } from "react-router";
-import {  Text, FormLabel, Input, Button, FormControl} from "@chakra-ui/react";
+import {  Image, Text, FormLabel, Input, Button, FormControl} from "@chakra-ui/react";
 import { Password } from "./Password";
+import { SimpleMenu } from "../components/SimpleMenu";
 import  UserContext  from "../../services/context/UserContext";
 
 export const SignUp= () => {
 
     const history = useHistory();
     const { GetToken,SetToken,ServiceRest } = useContext(UserContext)
- 
+    
     
     
     
@@ -34,6 +35,7 @@ export const SignUp= () => {
     return(
     
         <div id="Registro" className="formulario">
+            <SimpleMenu></SimpleMenu>
             <div id="registro-titulo">
                 <div id="registro-titulo-texto">
                     <Text>Registro Usuario</Text>
