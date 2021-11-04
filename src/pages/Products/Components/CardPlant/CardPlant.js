@@ -1,75 +1,46 @@
 import React from 'react'
-import { Image } from '@chakra-ui/image'
-import { StarIcon } from '@chakra-ui/icons'
-import { Box, Badge,Button, Grid, GridItem } from '@chakra-ui/react'
+import { Box, Badge, Image } from '@chakra-ui/react'
 
 
 const CardPlant = () => {
-    const property = {
-        imageUrl: "https://bit.ly/2Z4KKcF",
-        imageAlt: "Rear view of modern home with pool",
-        beds: 3,
-        baths: 2,
-        title: "Modern home in city center in the heart of historic Los Angeles",
-        formattedPrice: "$1,900.00",
-        reviewCount: 34,
-        rating: 4,
-      }
+  const imageUrl = "https://www.65ymas.com/uploads/s1/11/54/94/bigstock-strawberry-leaves-infected-hea-262273396.jpeg";
   return (
-    <div>
-      <Box p="3" maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
-        <Image src={property.imageUrl} alt={property.imageAlt} />
+    <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden" bg="#EBFFF8" boxShadow="2xl" borderRadius="20">
+      <Image src={imageUrl} alt="" />
 
-        <Box p="6">
-          <Box display="flex" alignItems="baseline">
-            <Badge borderRadius="full" px="2" colorScheme="teal">
-              New
-            </Badge>
-            <Box
-              color="gray.500"
-              fontWeight="semibold"
-              letterSpacing="wide"
-              fontSize="xs"
-              textTransform="uppercase"
-              ml="2"
-            >
-              {property.beds} beds &bull; {property.baths} baths
-            </Box>
-          </Box>
-
+      <Box p="6">
+        <Box display="flex" alignItems="baseline">
+          <Badge borderRadius="full" px="2" colorScheme="teal">
+            Planta
+          </Badge>
           <Box
-            mt="1"
+            color="gray.500"
             fontWeight="semibold"
-            as="h4"
-            lineHeight="tight"
-            isTruncated
+            letterSpacing="wide"
+            fontSize="xs"
+            textTransform="uppercase"
+            ml="2"
           >
-            {property.title}
-          </Box>
-
-          <Box>
-            {property.formattedPrice}
-            <Box as="span" color="gray.600" fontSize="sm">
-              / wk
-            </Box>
-          </Box>
-
-          <Box display="flex" mt="2" alignItems="center">
-            {Array(5)
-              .fill('')
-              .map((_, i) => (
-                <StarIcon
-                  key={i}
-                  color={i < property.rating ? 'teal.500' : 'gray.300'}
-                />
-              ))}
-            <Box as="span" ml="2" color="gray.600" fontSize="sm">
-              {property.reviewCount} reviews
-            </Box>
+            NOMBRE PLANTA
           </Box>
         </Box>
+
+        <Box
+          mt="1"
+          fontWeight="semibold"
+          as="h4"
+          lineHeight="tight"
+          isTruncated
+        >
+          Problemas encontrados
+        </Box>
+
+        <Box>
+          Lorem ipsum is simple dummy text on the printing and typesetting
+          industry.
+        </Box>
       </Box>
-    </div>
+    </Box>
   )
 }
 

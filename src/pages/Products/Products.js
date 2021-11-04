@@ -1,21 +1,29 @@
-import React, { useState, useEffect } from 'react'
-import ListCards from './Components/ListCards/ListCards'
-import CardPlant from './Components/CardPlant/CardPlant_copy'
-import { Box, Text, Flex, Spacer } from '@chakra-ui/react'
+import React, { useState } from 'react'
+import CardPlant from './Components/CardPlant/CardPlant'
+import { Box, Accordion, Image, Center } from '@chakra-ui/react'
 import './Products.css'
+import Treatment from './Components/Treatment/Treatment.js'
+import { useData } from "../../providers/DataProvider";
+import logo from "../../assets/images/AgroMarket.png";
 const Products = () => {
+  const { data, setData } = useData();
+  const treatments = data.treatments;
+
   return (
+
     <div>
-      <h2>Pantalla</h2>
       <div class="frow">
         <div class="col col1">
-          <Box >
-            <CardPlant></CardPlant>
-          </Box>
+          <Center>
+            <Image src={logo} boxSize="40" fit="scale-down" />
+          </Center>
+          <CardPlant />
         </div>
         <div class="col col2">
           <Box >
-            <ListCards></ListCards>
+            <Accordion allowToggle >
+              {treatments.map((t) => <Treatment id={t.id} name={t.name} products={t.products} />)}
+            </Accordion>
           </Box>
         </div>
       </div>
