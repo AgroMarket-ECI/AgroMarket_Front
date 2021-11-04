@@ -1,4 +1,6 @@
 import React from 'react';
+import { CartComponent } from "../../components/CartComponent";
+import { SimpleMenu } from "../../components/SimpleMenu";
 import {
     Box,
     Image,
@@ -10,6 +12,9 @@ export const PlantItem = ({ imageUrl, imageAlt, title }) => {
     };    
 
     return (
+        <div>
+        <CartComponent></CartComponent>
+        <SimpleMenu></SimpleMenu>
         <Box padding="0.5%" margin="17px" bd="red" as="button" maxW="300px" borderWidth="1px" borderRadius="lg" overflow="hidden" borderColor="black" onClick={clickChange}>
             <Box>
                 <Image w="100%" src={imageUrl} alt={imageAlt}/>
@@ -23,5 +28,6 @@ export const PlantItem = ({ imageUrl, imageAlt, title }) => {
                 {title}
             </Box>
         </Box>
+        </div>
     )
 };

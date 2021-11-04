@@ -17,6 +17,9 @@ import {
 	NumberInputField,
 	NumberInput
 } from '@chakra-ui/react';
+
+import { SimpleMenu } from "../components/SimpleMenu";
+import { CartComponent } from "../components/CartComponent";
 import { AddIcon } from '@chakra-ui/icons';
 
 export const Product = () => {
@@ -44,6 +47,8 @@ export const Product = () => {
 
 	return (
 		<Container maxW={'8xl'}>
+			<SimpleMenu></SimpleMenu>
+            <CartComponent></CartComponent>
 			<HStack justify={'right'} py={6}>
 				<Button leftIcon={<CircleIcon boxSize={7} color="red.500" />} colorScheme="teal" variant="solid">
 					{itemsCounter}

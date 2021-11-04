@@ -3,19 +3,30 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import NotFound from "./pages/notFound/NotFound"
-import { ChakraProvider } from "@chakra-ui/react"
-import { Login } from "./pages/form/Login";
-import { SignUp } from "./pages/form/SignUp";
+import { ChakraProvider,Menu, MenuButton,Image,MenuList,MenuItem,Button  } from "@chakra-ui/react"
+import IconButton from "@chakra-ui/react";
+import  Login  from "./pages/form/Login";
+import  SignUp  from "./pages/form/SignUp";
 import UploadPlant from './pages/plant/upload/UploadPlant';
-import { ByImage } from './pages/plant/byImage/ByImage';
-import { Home } from "./pages/Home/Home";
+import { ByImage }  from './pages/plant/byImage/ByImage';
+import  Home  from "./pages/Home/Home";
 import { Product } from './pages/product/Product';
 import ServiceApi from './services/ServiceApi';
+
+
 ReactDOM.render(
   
+
   <ChakraProvider>
+    
+   
     <React.StrictMode>
+    
       <ServiceApi>
+      
+    
+    
+
       <BrowserRouter>
         <Switch>
           
@@ -32,8 +43,6 @@ ReactDOM.render(
       </ServiceApi>
 
     </React.StrictMode>
-  </ChakraProvider>
-  
-   ,
+  </ChakraProvider>,
   document.getElementById('root')
 );
