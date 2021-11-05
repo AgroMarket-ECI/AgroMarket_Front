@@ -1,10 +1,8 @@
 import { Box, Heading, Text, Input, InputGroup, InputLeftElement, Button, Center, SimpleGrid, Image } from "@chakra-ui/react";
 import { Search2Icon, Icon } from '@chakra-ui/icons';
-import { BsFillCameraFill } from "react-icons/bs";
 import './css/Home.css';
 import logo from '../form/img/AgroMarket.png';
 import logo2 from '../../img/AgroMarket.png';
-import planta from './img/homeplanta2.jpg';
 import { useState, useRef , useContext } from "react";
 import { useHistory } from "react-router";
 import {ServiceApi} from '../../services/ServiceApi';
@@ -83,7 +81,7 @@ export const Home = () =>{
                                 <Center>
                                     <InputGroup width="100%" maxW="300px" className="inputplanta">
                                         <InputLeftElement pointerEvents="none" children={<Search2Icon color="gray.300" />} />
-                                        <Input background="white" type="text" placeholder="Buscar por Nombre de la planta" />
+                                        <Input background="white" type="text" placeholder="Buscar por nombre de la planta" />
                                     </InputGroup>
                                 </Center>
                                 <br />
