@@ -3,15 +3,19 @@ import  axios  from "axios";
 
 export const ServiceApi = (props) =>{
 
-    var token = "";
 
     const GetToken = () =>{
-        return token;
+        console.log("hola"+window.localStorage.getItem("token"));
+        if(window.localStorage.getItem("token")==null){
+            console.log("hola2"+window.localStorage.getItem("token"));
+            return "";
+        }
+        return window.localStorage.getItem("token");
     }
 
     const SetToken = (varToken) =>{
-        token=varToken;
-        console.log(token);
+        window.localStorage.setItem("token",varToken);
+        console.log(window.localStorage.getItem("token"));
     }
 
     
@@ -19,7 +23,7 @@ export const ServiceApi = (props) =>{
     function ServiceRest (rest,uri,datas,callback){
         const header = {
             "Content-type" : "application/json",
-            "Authorization" : "Bearer " + token
+            "Authorization" : "Bearer " + GetToken()
         }
                 axios({
                 method: rest,

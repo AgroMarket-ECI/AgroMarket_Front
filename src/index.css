@@ -18,7 +18,23 @@ code {
   top : 13px;
   position:absolute;
 }
-
+.imagen-boton-cart,
+.imagen-rojo-boton-cart{
+  position:absolute;
+  top:0px;
+}
+.imagen-rojo-boton-cart{
+  width: 75%;
+  right:-35%;
+  top:-35%;
+  z-index:100;
+}
+.imagen-rojo-boton-cart .numero{
+  position:absolute;
+  top:-6%;
+  left:15%;
+  font-weight: 700;
+}
 .boton-hamburguesa{
   left : 10%;
 }

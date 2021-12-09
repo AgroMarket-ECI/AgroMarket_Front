@@ -90,7 +90,7 @@ export const Treatment = () => {
     			<TabPanel>
 					<Container maxW={'8xl'}>
 					{products.map((p, index) => 
-						<Product ProductName={p.name} ProductDescription={p.description} ProductPrice={p.price} ProductImage={p.image}
+						<Product index={index} ProductName={p.name} ProductDescription={p.description} ProductPrice={p.price} ProductImage={p.image}
 						/>)}
 					
 					</Container>

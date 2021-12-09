@@ -18,10 +18,31 @@ import {
 import { AddIcon } from '@chakra-ui/icons';
 
 
-export const Product = (  {ProductName,ProductDescription,ProductPrice,ProductImage}  ) => {
+export const Product = (  {ProductName,ProductDescription,ProductPrice,ProductImage,index}  ) => {
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		setItemsCounter(itemsCounter);
+		const numberProduct=document.getElementById(`cart${index}`).value;
+		var cart=JSON.parse(window.localStorage.getItem("cart"));
+		var contCart=0;
+		console.log(cart[ProductName]);
+		if(cart==null){
+			cart={};
+			cart[ProductName]=parseInt(numberProduct);
+		}else if(cart[ProductName]!=undefined){
+			cart[ProductName]=parseInt(cart[ProductName])+parseInt(numberProduct);
+		}else{
+			cart[ProductName]=parseInt(numberProduct);
+		}
+		for(let clave in cart){
+			contCart=contCart+cart[clave]
+		}
+		window.localStorage.setItem("cart",JSON.stringify(cart));
+		
+		console.log(JSON.parse(window.localStorage.getItem("cart")));
+		document.getElementById("CartNumber").innerHTML=contCart;
+
+		
+		
 	};
 	const imageUrl =  `/assets/${ProductImage}`
 	const [ itemsCounter, setItemsCounter ] = useState(1);
@@ -59,21 +80,22 @@ export const Product = (  {ProductName,ProductDescription,ProductPrice,ProductIm
 					<br />
 				</Heading>
 				<Stack  marginBottom="20px" spacing={{ base: 4, sm: 6 }} direction={'row'}>
-					<NumberInput size="lg" maxW={32} defaultValue={1} min={1} max={10}>
+					<NumberInput id={`cart${index}`} size="lg" maxW={32} defaultValue={1} min={1} max={10}>
 						<NumberInputField backgroundColor={'white'} />
 						<NumberInputStepper>
-							<NumberIncrementStepper />
+							<NumberIncrementStepper/>
 							<NumberDecrementStepper />
 						</NumberInputStepper>
 					</NumberInput>
 					<Button
+						onClick={handleSubmit}
 						rounded={'full'}
 						size={'lg'}
 						fontWeight={'normal'}
 						px={6}
 						color={'white'}
 						colorScheme="red"
-						leftIcon={<AddIcon h={4} w={4} color={'white.300'} onSubmit={handleSubmit} />}
+						leftIcon={<AddIcon h={4} w={4} color={'white.300'}  />}
 					>
 						Add to Cart
 					</Button>
