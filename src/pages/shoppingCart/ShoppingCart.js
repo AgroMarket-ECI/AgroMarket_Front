@@ -1,4 +1,9 @@
 import "./css/ShoppingCart.css";
+import { SimpleMenu } from "../components/SimpleMenu";
+import { CartComponent } from "../components/CartComponent";
+import logo2 from '../../img/AgroMarket.png';
+import { Image } from "@chakra-ui/react";
+import { Box } from '@chakra-ui/react'
 import {
     Table,
     Thead,
@@ -8,15 +13,21 @@ import {
     Td,
     Button
 } from '@chakra-ui/react'
-import { Box } from '@chakra-ui/react'
 
 export const ShoppingCart = () => {
 
     return (
         <div>
+            <div id="header" className="header">
+                <SimpleMenu />
+                <div className="imagen-header">
+                    <Image width="100%" src={logo2} alt="Segun Adebayo" />
+                </div>
+                <CartComponent />
+            </div>
             <div id="summaryCart">
                 <div className="imageBag">
-                    <img className="bag" src="/assets/bag.png" alt="Resumen de compra"/>
+                    <img className="bag" src="/assets/bag.png" alt="Resumen de compra" />
                 </div>
                 <label className="summary">Resumen de compra</label>
             </div>
@@ -83,7 +94,7 @@ export const ShoppingCart = () => {
                         <Tr className="buttonBuy">
                             <Td></Td>
                             <Td>
-                            <Button className="buyProducts">Comprar</Button>
+                                <Button className="buyProducts">Comprar</Button>
                             </Td>
                         </Tr>
                     </Tbody>
