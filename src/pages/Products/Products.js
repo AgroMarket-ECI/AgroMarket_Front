@@ -4,7 +4,6 @@ import { Box, Accordion, Image, Center } from '@chakra-ui/react'
 import './Products.css'
 import Treatment from './Components/Treatment/Treatment.js'
 import { useData } from "../../providers/DataProvider";
-import logo from "../../assets/images/AgroMarket.png";
 import UserContext from "../../services/context/UserContext";
 import { useParams } from "react-router";
 import { SimpleMenu } from "../components/SimpleMenu";
@@ -53,7 +52,7 @@ const Products = () => {
         <div class="col col2">
           <Box >
             <Accordion allowToggle >
-              {treatmentsApi.map((t) => <Treatment id={t.id} name={t.name} products={t.products} />)}
+              {treatmentsApi.map((t) => <Treatment id={t.id} fileName={fileName} name={t.name} products={t.products} />)}
             </Accordion>
           </Box>
         </div>

@@ -1,0 +1,44 @@
+#Treatment .Titulo{
+
+    font-size: 45px;
+    font-weight: 600;
+
+
+    
+}
+#Treatment .titulo-imagen{
+    width:45%;
+    margin:5%;
+    float:left;
+}
+#Treatment .titulo-imagen .titulo-tratment{
+    font-size: 30px;
+    font-weight: 600;
+    border-bottom: 2px solid;
+    margin-bottom: 20px;
+}
+
+#Treatment .texto{
+    width:45%;
+    float:left;
+    margin-top:120px;
+}
+
+#Treatment #products-tratment{
+    width: 100%;
+    
+}
+
+@media screen and (max-width: 950px) {
+    #Treatment .texto,
+    #Treatment .titulo-imagen{
+        float:none;
+      
+        width:100%;
+    }
+    #Treatment .texto{
+        margin:0 auto;
+        width:70%;
+    }
+
+  }

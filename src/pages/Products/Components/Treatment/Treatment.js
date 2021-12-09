@@ -5,7 +5,7 @@ import { useHistory } from "react-router";
 import { AccordionItem, AccordionButton, Checkbox, AccordionIcon, Text, Button, AccordionPanel, Divider, Center } from '@chakra-ui/react'
 import Item from '../Item/Item.js';
 
-const Treatment = ({ id, name, products }) => {
+const Treatment = ({ id, fileName,name, products }) => {
     const history = useHistory();
     const prop = () => {
         const states = [];
@@ -49,7 +49,7 @@ const Treatment = ({ id, name, products }) => {
             </h2>
             <AccordionPanel >
                 <Center>
-                    <Button leftIcon={<InfoOutlineIcon />} colorScheme="pink" variant="solid" onClick={() => history.push('/product')}>
+                    <Button leftIcon={<InfoOutlineIcon />} colorScheme="pink" variant="solid" onClick={() => history.push(`/${fileName}/treatment/${id}`)}>
                         Ver Instrucciones
                     </Button>
                 </Center>

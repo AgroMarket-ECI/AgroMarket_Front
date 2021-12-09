@@ -7,7 +7,7 @@ import  Login  from "./pages/form/Login";
 import  SignUp  from "./pages/form/SignUp";
 import { ByImage }  from './pages/plant/byImage/ByImage';
 import  Home  from "./pages/Home/Home";
-import { Product } from './pages/product/Product';
+import { Treatment } from './pages/product/Treatment';
 import Products  from './pages/Products/Products';
 import { DataProvider } from './providers/DataProvider';
 import ServiceApi from './services/ServiceApi';
@@ -21,7 +21,7 @@ ReactDOM.render(
       <BrowserRouter>
         <Switch>
         <Route exact path="/" component={Home}/>
-        <Route exact path="/product" component={Product}/>
+        <Route exact path="/:fileName/treatment/:idTreatment" component={Treatment}/>
         <Route path="/products/:fileName" component={Products} />
         <Route exact path="/login" component={Login}/>
         <Route exact path="/signUp" component={SignUp}/>
