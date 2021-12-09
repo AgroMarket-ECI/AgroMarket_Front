@@ -37,7 +37,6 @@ export const Login = () => {
           <div className="imagen-header">
           <Image width="100%" src={logo2} alt="Segun Adebayo" />
           </div>
-          <CartComponent/>
         </div>
             
             

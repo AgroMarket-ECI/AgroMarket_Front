@@ -25,8 +25,8 @@ code {
 }
 .imagen-rojo-boton-cart{
   width: 75%;
-  right:-35%;
   top:-35%;
+  right:-35%;
   z-index:100;
 }
 .imagen-rojo-boton-cart .numero{
