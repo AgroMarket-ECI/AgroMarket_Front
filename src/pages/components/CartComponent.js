@@ -5,14 +5,7 @@ import { useEffect, useState } from "react";
 export const CartComponent = () =>{
     const imageUrl =  "/assets/cirrojo.png"
     var numberCart=0;
-    let cartStorage=(JSON.parse(window.localStorage.getItem("cart")));
-    if(cartStorage==null){
-        numberCart=0;
-    }else{
-        for(let clave in cartStorage){
-            numberCart=numberCart+cartStorage[clave];
-        }
-    }
+    
 
     
     const [cart, setCart] = useState(0);
@@ -20,11 +13,6 @@ export const CartComponent = () =>{
         event.preventDefault();
         //llegar a vista Angelica
     }
-    useEffect(()=>{
-        console.log("hola"+numberCart);
-    },window.localStorage.getItem("cart"))
-
-
 
 
     return(
