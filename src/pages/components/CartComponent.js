@@ -8,7 +8,7 @@ export const CartComponent = () =>{
     var cart=JSON.parse(window.localStorage.getItem("cart"));
     if(cart!=null){
         for(let clave in cart){
-            numberCart=numberCart+cart[clave];
+            numberCart=numberCart+cart[clave]["numberProduct"];
         }
     }
     const comprar = (event) => {
@@ -25,7 +25,7 @@ export const CartComponent = () =>{
                     <Image width="100%" src={imageUrl} />
                     <label id="CartNumber" className="numero">{numberCart}</label>
                 </div>
-                <Image className="imagen-boton-cart" width="100%" src="https://image.flaticon.com/icons/png/512/107/107831.png" alt="Segun Adebayo" />
+                <Image className="imagen-boton-cart" width="100%" src="https://image.flaticon.com/icons/png/512/107/107831.png" alt="carrito de compras" />
             </button>
         </div>
         

@@ -1,49 +1,84 @@
 import './css/Product.css';
 import { useState } from 'react';
-import Blob from './Blob.js';
 import {
 	Stack,
-	Box,
 	Heading,
 	Text,
 	Button,
 	Image,
-	useColorModeValue,
-	NumberIncrementStepper,
-	NumberDecrementStepper,
-	NumberInputStepper,
-	NumberInputField,
-	NumberInput,
 } from '@chakra-ui/react';
-import { AddIcon } from '@chakra-ui/icons';
+import { AddIcon, MinusIcon } from '@chakra-ui/icons';
 
 
 export const Product = (  {ProductName,ProductDescription,ProductPrice,ProductImage,index}  ) => {
-	const handleSubmit = (event) => {
+
+	const [showAll, setShowAll] = useState(0);
+
+	const handleSubmitAdd = (event) => {
 		event.preventDefault();
-		const numberProduct=document.getElementById(`cart${index}`).value;
-		var cart=JSON.parse(window.localStorage.getItem("cart"));
-		var contCart=0;
-		console.log(cart[ProductName]);
-		if(cart==null){
+		var cart = JSON.parse(window.localStorage.getItem("cart"));
+		var contCart = 0;
+		if(cart == null){
 			cart={};
-			cart[ProductName]=parseInt(numberProduct);
-		}else if(cart[ProductName]!=undefined){
-			cart[ProductName]=parseInt(cart[ProductName])+parseInt(numberProduct);
-		}else{
-			cart[ProductName]=parseInt(numberProduct);
+			const producto = {
+				"name": ProductName,
+				"price": ProductPrice, 
+				"numberProduct": 1
+			}
+			cart[ProductName] = producto;
 		}
+		else if(cart[ProductName]!=undefined){
+			const producto = {
+				"name": ProductName,
+				"price": ProductPrice, 
+				"numberProduct": parseInt(cart[ProductName]["numberProduct"]) + 1
+			}
+			cart[ProductName] = producto;
+		}
+		else{
+			const producto = {
+				"name": ProductName,
+				"price": ProductPrice, 
+				"numberProduct": 1
+			}
+			cart[ProductName] = producto;
+		}
+		saveToCart(cart, contCart);
+		setShowAll(cart[ProductName]["numberProduct"]);
+	};
+
+	const handleSubmitMinus = (event) => {
+		event.preventDefault();
+		var cart = JSON.parse(window.localStorage.getItem("cart"));
+		var contCart = 0;
+		if(cart != null){
+			if(cart[ProductName]!=undefined){
+				let restToCart = parseInt(cart[ProductName]["numberProduct"]) - 1
+				if (restToCart <= 0){
+					restToCart = 0
+				}
+				const producto = {
+					"name": ProductName,
+					"price": ProductPrice, 
+					"numberProduct": restToCart
+				}
+				cart[ProductName] = producto;
+				setShowAll(cart[ProductName]["numberProduct"]);
+			}
+		}
+		saveToCart(cart, contCart);
+	};
+
+	const saveToCart = (cart,contCart) => {
 		for(let clave in cart){
-			contCart=contCart+cart[clave]
+			contCart = contCart + cart[clave]["numberProduct"]
 		}
 		window.localStorage.setItem("cart",JSON.stringify(cart));
 		
 		console.log(JSON.parse(window.localStorage.getItem("cart")));
 		document.getElementById("CartNumber").innerHTML=contCart;
+	}
 
-		
-		
-	};
 	const imageUrl =  `/assets/${ProductImage}`
 	const [ itemsCounter, setItemsCounter ] = useState(1);
 	return (
@@ -54,8 +89,6 @@ export const Product = (  {ProductName,ProductDescription,ProductPrice,ProductIm
 						{ProductName}
 				</div>
 				<div
-					
-					
 					height={'280px'}
 					rounded={'2xl'}
 					max-width={"300px"}
@@ -80,32 +113,39 @@ export const Product = (  {ProductName,ProductDescription,ProductPrice,ProductIm
 					<br />
 				</Heading>
 				<Stack  marginBottom="20px" spacing={{ base: 4, sm: 6 }} direction={'row'}>
-					<NumberInput id={`cart${index}`} size="lg" maxW={32} defaultValue={1} min={1} max={10}>
-						<NumberInputField backgroundColor={'white'} />
-						<NumberInputStepper>
-							<NumberIncrementStepper/>
-							<NumberDecrementStepper />
-						</NumberInputStepper>
-					</NumberInput>
 					<Button
-						onClick={handleSubmit}
+						onClick={handleSubmitAdd}
 						rounded={'full'}
-						size={'lg'}
+						size={'md'}
 						fontWeight={'normal'}
-						px={6}
+						px={4}
 						color={'white'}
-						colorScheme="red"
+						bg="#389541"
+						_hover=""
 						leftIcon={<AddIcon h={4} w={4} color={'white.300'}  />}
 					>
-						Add to Cart
+						Añadir al carrito
+					</Button>
+					<Button
+						onClick={handleSubmitMinus}
+						rounded={'full'}
+						size={'md'}
+						fontWeight={'normal'}
+						px={4}
+						color={'white'}
+						bg="#e53e3e"
+						_hover=""
+						leftIcon={<MinusIcon h={4} w={4} color={'white.300'}  />}
+					>
+						Quitar del carrito
 					</Button>
 				</Stack>
-				<Text  fontSize={'25px'}>
+				<Text className="totalProducts">Cantidad de este producto añadido al carrito: {showAll}</Text>
+				<br></br>
+				<Text  fontSize={'20px'}>
 				{ProductDescription}
 				</Text>
-				
 			</div>
-			
 		</div>
 	);
 };

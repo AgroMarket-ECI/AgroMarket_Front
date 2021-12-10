@@ -58,19 +58,19 @@ export const Home = () =>{
             <div id="header" className="header">
           <SimpleMenu/>
           <div className="imagen-header">
-          <Image width="100%" src={logo2} alt="Segun Adebayo" />
+          <Image width="100%" src={logo2} alt="logo" />
           </div>
           <CartComponent/>
         </div>
             <div className="home">
                 <Box>
-                    <Image id="imagen" boxSize="200px" src={logo} />
+                    <Image id="imagen" boxSize="200px" src={logo} alt="logo"/>
                     <br />
-                    <Text fontSize="xl" width="100%" textAlign={['center']} color="Gray">
+                    <Text fontSize="xl" width="100%" textAlign={['center']} color="gray">
                         Te brindamos las mejores soluciones para combatir la enfermedad de tu planta de una forma rapida y eficiente.
                     </Text>
                     <br />
-                    <Text fontSize="xl" width="100%" textAlign={['center']} color="Gray">
+                    <Text fontSize="xl" width="100%" textAlign={['center']} color="black">
                         Selecciona la forma en que deseas realizar la búsqueda
                     </Text>
 

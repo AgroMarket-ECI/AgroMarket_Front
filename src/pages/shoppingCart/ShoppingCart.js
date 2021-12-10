@@ -3,7 +3,7 @@ import { SimpleMenu } from "../components/SimpleMenu";
 import { CartComponent } from "../components/CartComponent";
 import logo2 from '../../img/AgroMarket.png';
 import { Image } from "@chakra-ui/react";
-import { Box } from '@chakra-ui/react'
+import { useHistory } from "react-router";
 import {
     Table,
     Thead,
@@ -15,6 +15,27 @@ import {
 } from '@chakra-ui/react'
 
 export const ShoppingCart = () => {
+    const storageShoppingCart = JSON.parse(window.localStorage.getItem("cart"));
+    var myShoppingCart = []
+    var subtotalPrice = 0;
+    const shippingPrice = 50000; 
+    const history = useHistory();
+
+    for (let sc in storageShoppingCart) {
+        if (storageShoppingCart[sc]["numberProduct"] > 0 ){
+            myShoppingCart.push(storageShoppingCart[sc]);
+        }
+    }
+
+    const subtotal = (productPrice, numberProduct) => {
+        subtotalPrice += productPrice * numberProduct;
+        return productPrice * numberProduct;
+    }
+
+    const purchaseProduct = () => {
+        window.localStorage.setItem("cart", null)
+        history.push("/shoppingCart/purchase")
+    }
 
     return (
         <div>
@@ -36,39 +57,22 @@ export const ShoppingCart = () => {
                     <Thead>
                         <Tr>
                             <Th>Producto</Th>
-                            <Th>Precio por unidad</Th>
+                            <Th isNumeric>Precio por unidad</Th>
                             <Th isNumeric>Cantidad</Th>
                             <Th isNumeric>Subtotal</Th>
                         </Tr>
                     </Thead>
                     <Tbody>
-                        <Tr>
-                            <Td>
-                                <Box w='100%' p={4} color='black'>
-                                    This is the Box
-                                </Box>
-                            </Td>
-                            <Td>millimetres (mm)</Td>
-                            <Td isNumeric>25.4</Td>
-                        </Tr>
-                        <Tr>
-                            <Td>
-                                <Box w='100%' p={4} color='black'>
-                                    This is the Box
-                                </Box>
-                            </Td>
-                            <Td>centimetres (cm)</Td>
-                            <Td isNumeric>30.48</Td>
-                        </Tr>
-                        <Tr>
-                            <Td>
-                                <Box w='100%' p={4} color='black'>
-                                    This is the Box
-                                </Box>
-                            </Td>
-                            <Td>metres (m)</Td>
-                            <Td isNumeric>0.91444</Td>
-                        </Tr>
+                        {myShoppingCart.map((msc, i) => {
+                            return (
+                                <Tr>
+                                    <Td>{msc.name}</Td>
+                                    <Td isNumeric >{msc.price}</Td>
+                                    <Td isNumeric>{msc.numberProduct}</Td>
+                                    <Td isNumeric>{subtotal(msc.price, msc.numberProduct)}</Td>
+                                </Tr>
+                            );
+                        })}
                     </Tbody>
                 </Table>
             </div>
@@ -77,24 +81,20 @@ export const ShoppingCart = () => {
                     <Tbody>
                         <Tr>
                             <Td className="titles">Subtotal</Td>
-                            <Td>millimetres (mm)</Td>
-                        </Tr>
-                        <Tr>
-                            <Td className="titles">Descuento</Td>
-                            <Td>centimetres (cm)</Td>
+                            <Td>{subtotalPrice}</Td>
                         </Tr>
                         <Tr>
                             <Td className="titles">Envio</Td>
-                            <Td>metres (m)</Td>
+                            <Td>{shippingPrice}</Td>
                         </Tr>
                         <Tr>
                             <Td className="titles">Total</Td>
-                            <Td>metres (m)</Td>
+                            <Td className="titles">{shippingPrice + subtotalPrice}</Td>
                         </Tr>
                         <Tr className="buttonBuy">
                             <Td></Td>
                             <Td>
-                                <Button className="buyProducts">Comprar</Button>
+                                <Button className="buyProducts"  onClick={purchaseProduct}>Comprar</Button>
                             </Td>
                         </Tr>
                     </Tbody>

@@ -36,6 +36,7 @@ export const SimpleMenu = () =>{
             </MenuItem>
             <MenuItem onClick={() => {
               SetToken("");
+              window.localStorage.setItem("cart", null)
               history.push("/Login")}}>
               Cerrar Sesión
             </MenuItem>

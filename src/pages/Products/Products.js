@@ -38,7 +38,7 @@ const Products = () => {
       <div id="header" className="header">
           <SimpleMenu/>
           <div className="imagen-header">
-          <Image width="100%" src={logo2} alt="Segun Adebayo" />
+          <Image width="100%" src={logo2} alt="logo" />
           </div>
           <CartComponent/>
         </div>

@@ -18,12 +18,6 @@ const Treatment = ({ id, fileName,name, products }) => {
     const allChecked = checkedItems.every(Boolean)
     const isIndeterminate = checkedItems.some(Boolean) && !allChecked
 
-    const HandleChangeCheckAll = () => {
-        const checkedItemsShadow = []
-        checkedItems.map(() => checkedItemsShadow.push(!allChecked))
-        setCheckedItems(checkedItemsShadow)
-    }
-
     const HandleChangeCheckOne = (index) => {
         const newCheckedData = checkedItems.map((p, i) => {
             if (i === index) {
@@ -41,15 +35,13 @@ const Treatment = ({ id, fileName,name, products }) => {
         <AccordionItem bg="#EBFFF8" borderRadius="30" mb="30" pb="0.1" >
             <h2>
                 <AccordionButton h="28" _expanded={{ pb: "5", bg: "blackAlpha.50", borderRadius: "30" }} _hover={{ bg: "blackAlpha.50", borderRadius: "30" }} _focus={{borderRadius:"30"}}>
-                    <Checkbox size="lg" isChecked={allChecked} isIndeterminate={isIndeterminate} onChange={HandleChangeCheckAll}>
                         <Text color="#24903c" fontSize="20px" fontStyle="initial" textTransform="capitalize" fontWeight="bold">{name}</Text>
-                    </Checkbox>
                     <AccordionIcon />
                 </AccordionButton>
             </h2>
             <AccordionPanel >
                 <Center>
-                    <Button leftIcon={<InfoOutlineIcon />} colorScheme="pink" variant="solid" onClick={() => history.push(`/${fileName}/treatment/${id}`)}>
+                    <Button leftIcon={<InfoOutlineIcon />} bg="#e53e3e" _hover={""} color="white" variant="solid" onClick={() => history.push(`/${fileName}/treatment/${id}`)}>
                         Ver Instrucciones
                     </Button>
                 </Center>

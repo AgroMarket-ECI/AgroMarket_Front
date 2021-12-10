@@ -16,8 +16,6 @@ const Item = ({ isChecked, onChange, id, name, url, description, price }) => {
         
         <AccordionPanel ml="4" mr="4" mb="5" style={ColorComponent} borderRadius="20px" boxShadow="base">
             <Divider mb="5" />
-            <Checkbox isChecked={isChecked} onChange={onChange}
-                w="100%">
                 <Box p={3} display={{ md: "flex" }}>
                     <Box flexShrink={0} >
                         <Center>
@@ -34,7 +32,6 @@ const Item = ({ isChecked, onChange, id, name, url, description, price }) => {
                         </Box>
                     </Center>
                 </Box>
-            </Checkbox>
 
         </AccordionPanel>
     );

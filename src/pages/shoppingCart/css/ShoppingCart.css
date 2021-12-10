@@ -14,6 +14,7 @@
 #total{
     background-color: #dfecf0;
     border: 1px solid;
+    border-bottom: 1.2px solid;
     width: 30%;
     position: absolute;
     right:30px;
